@@ -1,0 +1,16 @@
+.card-tag-list {
+  margin-top: 10rpx;
+  height: 15px;
+  overflow: hidden;
+}
+.card-tag-list > .tag {
+  float: left;
+  padding: 0 5px;
+  border-radius: 1px;
+  font-size: 10px;
+  height: 15px;
+  line-height: 15px;
+  color: #999;
+  background-color: #f2f2f7;
+  margin-right: 5px;
+}

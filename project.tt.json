@@ -1,0 +1,13 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "webapp",
+  "description": "社区团购",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram"
+}
