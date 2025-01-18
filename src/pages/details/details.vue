@@ -16,7 +16,7 @@
     <!-- 带有追评的评论   -->
 
     <view class="card-comment"
-          style="margin-top: 100px; border-radius: 25px;background-color: red"
+          style="margin-top: 100px; border-radius: 25px;background-color: red ;width: 80%;"
 
     >
       <nut-comment
