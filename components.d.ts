@@ -9,7 +9,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     CardList: typeof import('./src/components/CardList/CardList.vue')['default']
     NutBarrage: typeof import('@nutui/nutui-taro')['Barrage']
-    NutButton: typeof import('@nutui/nutui-taro')['Button']
     NutCard: typeof import('@nutui/nutui-taro')['Card']
     NutCategory: typeof import('@nutui/nutui-taro')['Category']
     NutCategoryPane: typeof import('@nutui/nutui-taro')['CategoryPane']
@@ -18,7 +17,6 @@ declare module 'vue' {
     NutFixedNav: typeof import('@nutui/nutui-taro')['FixedNav']
     NutGrid: typeof import('@nutui/nutui-taro')['Grid']
     NutGridItem: typeof import('@nutui/nutui-taro')['GridItem']
-    NutIcon: typeof import('@nutui/nutui-taro')['Icon']
     NutNoticebar: typeof import('@nutui/nutui-taro')['Noticebar']
     NutSearchbar: typeof import('@nutui/nutui-taro')['Searchbar']
     NutSku: typeof import('@nutui/nutui-taro')['Sku']

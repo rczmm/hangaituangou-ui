@@ -10,11 +10,12 @@
         :delivery="state.delivery"
         :shop-name="state.shopName"
       >
-        <template #shop-tag>
-          <view v-for="(tag,index) in state.tags" :key="index" class="card-tag-list">
-            <span class="tag">{{ tag }}</span>
+        <template #prolist>
+          <view class="card-tag-list">
+            <span v-for="(tag,index) in state.tags" :key="index" class="tag">{{ tag }}</span>
           </view>
         </template>
+
       </nut-card>
     </view>
   </view>
