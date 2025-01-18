@@ -15,25 +15,32 @@
                    :size="25" color="red"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="水果鲜花">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
+                   :size="25" color="red"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="休闲零食">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
+                   :size="25" color="red"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="粮油调味">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
+                   :size="25" color="red"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="酒水饮料">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
+                   :size="25" color="red"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="肉蛋水产">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
+                   :size="25" color="red"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="个护清洁">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
+                   :size="25" color="red"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="日用百货">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
+                   :size="25" color="red"></icon-font>
       </nut-grid-item>
     </nut-grid>
 
@@ -77,7 +84,8 @@ const swiperList = ref([
   'https://storage.360buyimg.com/jdc-article/fristfabu.jpg'
 ])
 
-const state = ref([{
+const state = ref([
+  {
   imgUrl:
     '//img10.360buyimg.com/n2/s240x240_jfs/t1/210890/22/4728/163829/6163a590Eb7c6f4b5/6390526d49791cb9.jpg!q70.jpg',
   title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
@@ -97,7 +105,79 @@ const state = ref([{
   delivery: '厂商配送',
   shopName: '阳澄湖大闸蟹自营店>',
   tags: ['生鲜', '热销', '大卖']
-}])
+}
+  , {
+    imgUrl:
+      '//img10.360buyimg.com/n2/s240x240_jfs/t1/210890/22/4728/163829/6163a590Eb7c6f4b5/6390526d49791cb9.jpg!q70.jpg',
+    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
+    price: '388',
+    vipPrice: '378',
+    shopDesc: '自营',
+    delivery: '厂商配送',
+    shopName: '阳澄湖大闸蟹自营店>',
+    tags: ['生鲜', '热销', '大卖']
+  }, {
+    imgUrl:
+      '//img10.360buyimg.com/n2/s240x240_jfs/t1/210890/22/4728/163829/6163a590Eb7c6f4b5/6390526d49791cb9.jpg!q70.jpg',
+    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
+    price: '388',
+    vipPrice: '378',
+    shopDesc: '自营',
+    delivery: '厂商配送',
+    shopName: '阳澄湖大闸蟹自营店>',
+    tags: ['生鲜', '热销', '大卖']
+  }, {
+    imgUrl:
+      '//img10.360buyimg.com/n2/s240x240_jfs/t1/210890/22/4728/163829/6163a590Eb7c6f4b5/6390526d49791cb9.jpg!q70.jpg',
+    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
+    price: '388',
+    vipPrice: '378',
+    shopDesc: '自营',
+    delivery: '厂商配送',
+    shopName: '阳澄湖大闸蟹自营店>',
+    tags: ['生鲜', '热销', '大卖']
+  }, {
+    imgUrl:
+      '//img10.360buyimg.com/n2/s240x240_jfs/t1/210890/22/4728/163829/6163a590Eb7c6f4b5/6390526d49791cb9.jpg!q70.jpg',
+    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
+    price: '388',
+    vipPrice: '378',
+    shopDesc: '自营',
+    delivery: '厂商配送',
+    shopName: '阳澄湖大闸蟹自营店>',
+    tags: ['生鲜', '热销', '大卖']
+  }, {
+    imgUrl:
+      '//img10.360buyimg.com/n2/s240x240_jfs/t1/210890/22/4728/163829/6163a590Eb7c6f4b5/6390526d49791cb9.jpg!q70.jpg',
+    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
+    price: '388',
+    vipPrice: '378',
+    shopDesc: '自营',
+    delivery: '厂商配送',
+    shopName: '阳澄湖大闸蟹自营店>',
+    tags: ['生鲜', '热销', '大卖']
+  }, {
+    imgUrl:
+      '//img10.360buyimg.com/n2/s240x240_jfs/t1/210890/22/4728/163829/6163a590Eb7c6f4b5/6390526d49791cb9.jpg!q70.jpg',
+    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
+    price: '388',
+    vipPrice: '378',
+    shopDesc: '自营',
+    delivery: '厂商配送',
+    shopName: '阳澄湖大闸蟹自营店>',
+    tags: ['生鲜', '热销', '大卖']
+  }, {
+    imgUrl:
+      '//img10.360buyimg.com/n2/s240x240_jfs/t1/210890/22/4728/163829/6163a590Eb7c6f4b5/6390526d49791cb9.jpg!q70.jpg',
+    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
+    price: '388',
+    vipPrice: '378',
+    shopDesc: '自营',
+    delivery: '厂商配送',
+    shopName: '阳澄湖大闸蟹自营店>',
+    tags: ['生鲜', '热销', '大卖']
+  }
+])
 
 
 </script>

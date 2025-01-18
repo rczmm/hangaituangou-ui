@@ -1,4 +1,9 @@
 <template>
+
+  <nut-searchbar>
+
+  </nut-searchbar>
+
   <nut-category :category="data.category" @change="change">
     <nut-category-pane :categoryChild="data.categoryChild" @onChange="onChange"></nut-category-pane>
   </nut-category>
