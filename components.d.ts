@@ -8,12 +8,15 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     CardList: typeof import('./src/components/CardList/CardList.vue')['default']
+    NutAddressList: typeof import('@nutui/nutui-taro')['AddressList']
+    NutAvatar: typeof import('@nutui/nutui-taro')['Avatar']
     NutBarrage: typeof import('@nutui/nutui-taro')['Barrage']
     NutCard: typeof import('@nutui/nutui-taro')['Card']
     NutCategory: typeof import('@nutui/nutui-taro')['Category']
     NutCategoryPane: typeof import('@nutui/nutui-taro')['CategoryPane']
     NutCell: typeof import('@nutui/nutui-taro')['Cell']
     NutComment: typeof import('@nutui/nutui-taro')['Comment']
+    NutDivider: typeof import('@nutui/nutui-taro')['Divider']
     NutFixedNav: typeof import('@nutui/nutui-taro')['FixedNav']
     NutGrid: typeof import('@nutui/nutui-taro')['Grid']
     NutGridItem: typeof import('@nutui/nutui-taro')['GridItem']
@@ -22,5 +25,8 @@ declare module 'vue' {
     NutSku: typeof import('@nutui/nutui-taro')['Sku']
     NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
     NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']
+    NutTabPane: typeof import('@nutui/nutui-taro')['TabPane']
+    NutTabs: typeof import('@nutui/nutui-taro')['Tabs']
+    NutTag: typeof import('@nutui/nutui-taro')['Tag']
   }
 }

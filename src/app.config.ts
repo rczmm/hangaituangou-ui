@@ -3,6 +3,8 @@ export default {
     'pages/index/index',
     'pages/details/details',
     'pages/category/category',
+    'pages/my/my',
+    'pages/address/address'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -24,7 +26,14 @@ export default {
     }, {
       pagePath: 'pages/category/category',
       text: '分类'
-    }
+    }, {
+      pagePath: 'pages/my/my',
+      text: '我的'
+    },
+      {
+        pagePath: 'pages/address/address',
+        text: '地址'
+      }
     ]
   }
 }
