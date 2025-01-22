@@ -55,6 +55,9 @@ export default defineConfig<'webpack5'>(async (merge, {command, mode}) => {
             namingPattern: 'module', // 转换模式，取值为 global/module
             generateScopedName: '[name]__[local]___[hash:base64:5]'
           }
+        },
+        optimizeMainPackage: {
+          enable: true
         }
       },
       webpackChain(chain) {

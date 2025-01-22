@@ -62,7 +62,6 @@
       <nut-divider direction="vertical"/>
       <nut-tag type="danger" plain round> 看小说赚钱</nut-tag>
       <nut-divider direction="vertical"/>
-      <nut-tag type="danger" plain round> 走路赚钱</nut-tag>
     </view>
 
     <nut-divider/>
