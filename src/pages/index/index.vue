@@ -136,7 +136,8 @@ const swiperList = ref([
   'https://storage.360buyimg.com/jdc-article/fristfabu.jpg'
 ])
 
-const state = ref([
+const state = ref(
+  [
   {
     imgUrl:
       '//gw.alicdn.com/bao/uploaded/i3/1624565934/O1CN01RTTRFy1thoztFTvWl_!!0-item_pic.jpg_300x300q90.jpg',
