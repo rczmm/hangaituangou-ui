@@ -52,18 +52,23 @@
 
     <nut-divider/>
 
-
-    <view :style="{ fontSize: '14px', marginLeft: '20px', color: '#909ca4' }">
-      <nut-tag type="danger" plain round> 天天抽奖</nut-tag>
-      <nut-divider direction="vertical"/>
-      <nut-tag type="danger" plain round> 签到领现金</nut-tag>
-      <nut-divider direction="vertical"/>
-      <nut-tag type="danger" plain round> 看视频赚钱</nut-tag>
-      <nut-divider direction="vertical"/>
-      <nut-tag type="danger" plain round> 看小说赚钱</nut-tag>
-      <nut-divider direction="vertical"/>
-      <nut-tag type="danger" plain round> 走路赚钱</nut-tag>
-    </view>
+    <nut-grid :border="false" column-num="5">
+      <nut-grid-item>
+        <nut-tag type="danger" plain round> 天天抽奖</nut-tag>
+      </nut-grid-item>
+      <nut-grid-item>
+        <nut-tag type="danger" plain round> 签到领现金</nut-tag>
+      </nut-grid-item>
+      <nut-grid-item>
+        <nut-tag type="danger" plain round> 看视频赚钱</nut-tag>
+      </nut-grid-item>
+      <nut-grid-item>
+        <nut-tag type="danger" plain round> 看小说赚钱</nut-tag>
+      </nut-grid-item>
+      <nut-grid-item>
+        <nut-tag type="danger" plain round> 走路赚钱</nut-tag>
+      </nut-grid-item>
+    </nut-grid>
 
     <nut-divider/>
 
