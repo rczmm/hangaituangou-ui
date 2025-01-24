@@ -10,6 +10,7 @@ declare module 'vue' {
     CardList: typeof import('./src/components/CardList/CardList.vue')['default']
     NutAddressList: typeof import('@nutui/nutui-taro')['AddressList']
     NutAvatar: typeof import('@nutui/nutui-taro')['Avatar']
+    NutBacktop: typeof import('@nutui/nutui-taro')['Backtop']
     NutBarrage: typeof import('@nutui/nutui-taro')['Barrage']
     NutCard: typeof import('@nutui/nutui-taro')['Card']
     NutCategory: typeof import('@nutui/nutui-taro')['Category']

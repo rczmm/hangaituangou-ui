@@ -5,7 +5,6 @@
     <view class="avatar-view">
       <nut-avatar
         size="large"
-        shape=""
         class="avatar-index"
       > 王
       </nut-avatar>
@@ -88,7 +87,7 @@
 
     <nut-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 16px' }"> 为您推荐</nut-divider>
 
-    <nut-fixed-nav v-model:visible="visible" type="left" :position="{ top: '140px' }" :nav-list="navList"/>
+    <nut-fixed-nav v-model:visible="visible" type="right" :position="{ top: '400px' }" :nav-list="navList"/>
 
     <nut-tabs v-model="value">
       <nut-tab-pane title="Tab 1" pane-key="1"> Content 1</nut-tab-pane>
@@ -103,6 +102,8 @@
 import {IconFont} from "@nutui/icons-vue";
 import {ref} from "vue";
 import './my.scss'
+
+const value = ref('1')
 
 const visible = ref(false)
 const navList = ref([

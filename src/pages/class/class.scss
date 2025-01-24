@@ -8,6 +8,12 @@
   padding: 10px;
 }
 
+.scroll-view::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
 .scroll-item {
   display: flex; /* 开启 flex 布局 */
   flex-direction: column; /* 设置主轴为垂直方向 */

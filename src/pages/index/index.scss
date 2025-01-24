@@ -1,3 +1,37 @@
 .danmu-view {
   background-color: #e8e6e6;
 }
+
+.scroll-view {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap; /* 虽然使用 flexbox 可以不使用这个属性，但保留可以增强兼容性 */
+  width: 100%;
+  height: 10%;
+  padding: 10px;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none; /* IE 和 Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-view::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.scroll-item {
+  display: flex; /* 开启 flex 布局 */
+  flex-direction: column; /* 设置主轴为垂直方向 */
+  justify-content: center; /*  */
+  align-items: center; /* 水平居中垂直居中 (可选，如果需要) */
+  flex-shrink: 0;
+  width: 20%;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.scroll-container {
+  height: 100%;
+  overflow-y: auto;
+}

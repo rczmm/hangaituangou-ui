@@ -3,10 +3,14 @@
 
     <!-- 搜索框   -->
     <nut-searchbar v-model="val">
+      <template #leftout> 涵盖团购</template>
+      <template #leftin>
+        <Search2/>
+      </template>
     </nut-searchbar>
 
     <!-- 通知栏   -->
-    <nut-noticebar :text="text"/>
+    <nut-noticebar :text="text" close-mode scrollable/>
 
     <!-- 栅栏布局   -->
     <nut-grid>
@@ -52,23 +56,24 @@
 
     <nut-divider/>
 
-    <nut-grid :border="false" column-num="5">
-      <nut-grid-item>
+
+    <view class="scroll-view">
+      <view class="scroll-item">
         <nut-tag type="danger" plain round> 天天抽奖</nut-tag>
-      </nut-grid-item>
-      <nut-grid-item>
-        <nut-tag type="danger" plain round> 签到领现金</nut-tag>
-      </nut-grid-item>
-      <nut-grid-item>
-        <nut-tag type="danger" plain round> 看视频赚钱</nut-tag>
-      </nut-grid-item>
-      <nut-grid-item>
-        <nut-tag type="danger" plain round> 看小说赚钱</nut-tag>
-      </nut-grid-item>
-      <nut-grid-item>
+      </view>
+      <view class="scroll-item">
+        <nut-tag type="danger" plain round> 签到领钱</nut-tag>
+      </view>
+      <view class="scroll-item">
+        <nut-tag type="danger" plain round> 领券立减</nut-tag>
+      </view>
+      <view class="scroll-item">
+        <nut-tag type="danger" plain round> 团购厨神</nut-tag>
+      </view>
+      <view class="scroll-item">
         <nut-tag type="danger" plain round> 走路赚钱</nut-tag>
-      </nut-grid-item>
-    </nut-grid>
+      </view>
+    </view>
 
     <nut-divider/>
 
@@ -89,17 +94,25 @@
 
 
     <!-- 列表  -->
-    <CardList :items="state">
-    </CardList>
-
+    <view class="cardList-backtop">
+      <nut-backtop height="calc(100vh - 100px)">
+        <template #content>
+          <view ref="scrollDiv" class="scroll-container" @scroll="handleScroll">
+            <CardList :items="state">
+            </CardList>
+          </view>
+        </template>
+      </nut-backtop>
+    </view>
   </view>
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
-import {IconFont} from "@nutui/icons-vue";
+import {onMounted, ref} from 'vue'
+import {IconFont, Search2} from "@nutui/icons-vue";
 import './index.scss';
 import CardList from "../../components/CardList/CardList.vue";
+import Taro from '@tarojs/taro';
 
 const text = ref('欢迎来到涵盖团购！')
 
@@ -127,29 +140,36 @@ const list = ref([
   "期待下次的团购活动，希望能有更多好物！"
 ])
 
+const getDanmuList = async () => {
+  const res = await Taro.request({
+    url: 'https://api.vvhan.com/api/morning',
+    method: 'GET'
+  })
+  list.value = [...list.value, ...res.data]
+}
+
 const val = ref('')
 
 const swiperList = ref([
   'https://img.alicdn.com/imgextra/i3/O1CN017Z2XUL1nnQ94i2MTP_!!6000000005134-0-tps-846-472.jpg',
   'https://img.alicdn.com/imgextra/i1/O1CN01YGUXOM1k5VKBPo5J3_!!6000000004632-2-tps-846-472.png',
-  'https://img.alicdn.com/imgextra/i3/O1CN01Sf6dER1zbJ3uVQ0lE_!!6000000006732-0-tps-846-472.jpg',
-  'https://storage.360buyimg.com/jdc-article/fristfabu.jpg'
+  'https://img.alicdn.com/imgextra/i3/O1CN01Sf6dER1zbJ3uVQ0lE_!!6000000006732-0-tps-846-472.jpg'
 ])
 
 const state = ref(
   [
-  {
-    imgUrl:
-      '//gw.alicdn.com/bao/uploaded/i3/1624565934/O1CN01RTTRFy1thoztFTvWl_!!0-item_pic.jpg_300x300q90.jpg',
-    title: '法式复古玫瑰ins少女心床裙款田园风小碎花床上四件套全棉纯棉1.5',
-    price: '258',
-    vipPrice: '378',
-    shopDesc: '自营',
-    delivery: '厂商配送',
-    shopName: '阳澄湖大闸蟹自营店>',
-    tags: ['生鲜', '热销', '大卖']
-  }
-  , {
+    {
+      imgUrl:
+        '//gw.alicdn.com/bao/uploaded/i3/1624565934/O1CN01RTTRFy1thoztFTvWl_!!0-item_pic.jpg_300x300q90.jpg',
+      title: '法式复古玫瑰ins少女心床裙款田园风小碎花床上四件套全棉纯棉1.5',
+      price: '258',
+      vipPrice: '378',
+      shopDesc: '自营',
+      delivery: '厂商配送',
+      shopName: '阳澄湖大闸蟹自营店>',
+      tags: ['生鲜', '热销', '大卖']
+    }
+    , {
     imgUrl:
       'https://gw.alicdn.com/bao/uploaded/i1/1752732599/TB25KZZobRkpuFjSspmXXc.9XXa_!!1752732599.jpg_300x300q90.jpg',
     title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
@@ -220,7 +240,55 @@ const state = ref(
     shopName: '阳澄湖大闸蟹自营店>',
     tags: ['生鲜', '热销', '大卖']
   }
-])
+  ])
 
+const getSwiperImage = async () => {
+  try {
+    const response = await Taro.request({
+      url: 'https://api.taro-admin.com/api/v1/swiper',
+      method: 'GET'
+    })
+    swiperList.value = response.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+// 定义响应式变量
+const scrollDiv = ref(null);
+const currentPage = ref(1);
+const limit = 10;
+
+const getStateList = async () => {
+  try {
+    const response = await Taro.request({
+      url: 'https://api.taro-admin.com/api/v1/state',
+      method: 'GET',
+      data: {
+        page: currentPage,
+        limit: limit
+      }
+    })
+    state.value = [...state.value, ...response.data];
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+// 处理滚动事件的函数
+const handleScroll = () => {
+  const {scrollTop, clientHeight, scrollHeight} = scrollDiv.value;
+  // 判断是否滚动到了底部
+  if (scrollTop + clientHeight >= scrollHeight - 100) {
+    // 滚动到底部，加载下一页数据
+    getStateList();
+  }
+};
+
+onMounted(() => {
+  getSwiperImage()
+  getStateList()
+  getDanmuList()
+})
 
 </script>
