@@ -21,6 +21,7 @@ declare module 'vue' {
     NutFixedNav: typeof import('@nutui/nutui-taro')['FixedNav']
     NutGrid: typeof import('@nutui/nutui-taro')['Grid']
     NutGridItem: typeof import('@nutui/nutui-taro')['GridItem']
+    NutList: typeof import('@nutui/nutui-taro')['List']
     NutNoticebar: typeof import('@nutui/nutui-taro')['Noticebar']
     NutSearchbar: typeof import('@nutui/nutui-taro')['Searchbar']
     NutSku: typeof import('@nutui/nutui-taro')['Sku']

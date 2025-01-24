@@ -277,10 +277,14 @@ const getStateList = async () => {
 
 // 处理滚动事件的函数
 const handleScroll = () => {
+
   const {scrollTop, clientHeight, scrollHeight} = scrollDiv.value;
   // 判断是否滚动到了底部
-  if (scrollTop + clientHeight >= scrollHeight - 100) {
+  console.log(scrollDiv.value)
+  console.log(scrollTop, clientHeight, scrollHeight)
+  if (scrollTop + clientHeight >= scrollHeight - 10) {
     // 滚动到底部，加载下一页数据
+    console.log("触发了滑动时间")
     getStateList();
   }
 };
