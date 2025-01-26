@@ -1,13 +1,15 @@
 <template>
   <view class="details">
-    <view class="a">
+    <!-- 轮播图片   -->
+    <view class="swiper_view">
       <!--  轮播图 -->
-      <nut-swiper :auto-play="3000" loop direction="vertical" style="height: 150px">
-        <nut-swiper-item v-for="(item, index) in product.imagePath" :key="index" style="height: 150px">
+      <nut-swiper :auto-play="3000" loop direction="vertical" style="height: 400px">
+        <nut-swiper-item v-for="(item, index) in product.imagePath" :key="index" style="height: 400px">
           <img :src="item" alt="" style="height: 100%; width: 100%" draggable="false"/>
         </nut-swiper-item>
       </nut-swiper>
     </view>
+
     <!-- 商品其他信息，名称 价格等   -->
     <view class="product_details_card">
       <!--      商品价格-->
@@ -38,6 +40,34 @@
 
     </view>
 
+
+    <!-- 选购指南 -->
+    <view class="product_guide">
+      <text>选购指南</text>
+      <nut-steps direction="vertical" class="guide_step" :current="4">
+        <nut-step title="在线下单">
+          <template #content>
+            <text>每天23点之前可选购明日送达的产品，23点后选购商品后天送达。预售品送货时间以订单页面为准</text>
+          </template>
+        </nut-step>
+        <nut-step title="物流配送">
+          <template #content>
+            <text>物流会将您下单时提示的配送时间，配送到您下单所选的团长门店。</text>
+          </template>
+        </nut-step>
+        <nut-step title="门店自提">
+          <template #content>
+            <text>每天16点提货(团长不同，提货时间可能会有差异，详见社群通知)。</text>
+          </template>
+        </nut-step>
+        <nut-step title="售后无忧">
+          <template #content>
+            <text>若购买的商品有问题，可联系团长处理，部分商品需联系平台处理。若购买后商家缺货，平台将及时退款。</text>
+          </template>
+        </nut-step>
+      </nut-steps>
+    </view>
+
     <!-- 列表   -->
     <!-- 带有追评的评论   -->
     <view class="card-comment">
@@ -52,21 +82,21 @@
     </view>
 
 
-    <!-- 悬浮导航   -->
-    <nut-fixed-nav v-model:visible="visible" :position="{ top: '70px' }" :nav-list="navList"/>
+    <view class="buy_view">
+      <!-- 商品规格选择   -->
+      <nut-cell :title="`立马下单`" desc="" @click="base = true"></nut-cell>
+      <nut-sku
+        v-model:visible="base"
+        :sku="data.sku"
+        :goods="data.goods"
+        @selectSku="selectSku"
+        @clickBtnOperate="clickBtnOperate"
+        @close="close"
+        :btnOptions="['buy', 'cart']"
+      >
+      </nut-sku>
+    </view>
 
-
-    <!-- 商品规格选择   -->
-    <nut-cell :title="`基础用法`" desc="" @click="base = true"></nut-cell>
-    <nut-sku
-      style="background-color: red"
-      v-model:visible="base"
-      :sku="data.sku"
-      :goods="data.goods"
-      @selectSku="selectSku"
-      @clickBtnOperate="clickBtnOperate"
-      @close="close"
-    ></nut-sku>
 
   </view>
 </template>
@@ -153,44 +183,45 @@ onMounted(
 
 
 const requestData = {
-  "Sku": [{
-    "id": 1,
-    "name": "颜色",
-    "list": [{"name": "亮黑色", "id": 100016015112, "active": true, "disable": false}, {
-      "name": "釉白色",
-      "id": 100016015142,
-      "active": false,
-      "disable": false
-    }, {"name": "秘银色", "id": 100016015078, "active": false, "disable": false}, {
-      "name": "夏日胡杨",
-      "id": 100009064831,
-      "active": false,
-      "disable": false
-    }, {"name": "秋日胡杨", "id": 100009064830, "active": false, "disable": false}]
-  }, {
-    "id": 2,
-    "name": "版本",
-    "list": [{"name": "8GB+128GB", "id": 100016015102, "active": true, "disable": false}, {
-      "name": "8GB+256GB",
-      "id": 100016015122,
-      "active": false,
-      "disable": false
-    }]
-  }, {
-    "id": 3,
-    "name": "版本",
-    "list": [{"name": "4G（有充版）", "id": 100016015103, "active": true, "disable": false}, {
-      "name": "5G（有充版）",
-      "id": 100016015123,
-      "active": false,
-      "disable": false
-    }, {"name": "5G（无充版）", "id": 100016015104, "active": true, "disable": true}, {
-      "name": "5G（无充）质保换新版",
-      "id": 100016015125,
-      "active": false,
-      "disable": false
-    }]
-  }],
+  "Sku": [
+    {
+      "id": 1,
+      "name": "颜色",
+      "list": [{"name": "亮黑色", "id": 100016015112, "active": true, "disable": false}, {
+        "name": "釉白色",
+        "id": 100016015142,
+        "active": false,
+        "disable": false
+      }, {"name": "秘银色", "id": 100016015078, "active": false, "disable": false}, {
+        "name": "夏日胡杨",
+        "id": 100009064831,
+        "active": false,
+        "disable": false
+      }, {"name": "秋日胡杨", "id": 100009064830, "active": false, "disable": false}]
+    }, {
+      "id": 2,
+      "name": "版本",
+      "list": [{"name": "8GB+128GB", "id": 100016015102, "active": true, "disable": false}, {
+        "name": "8GB+256GB",
+        "id": 100016015122,
+        "active": false,
+        "disable": false
+      }]
+    }, {
+      "id": 3,
+      "name": "版本",
+      "list": [{"name": "4G（有充版）", "id": 100016015103, "active": true, "disable": false}, {
+        "name": "5G（有充版）",
+        "id": 100016015123,
+        "active": false,
+        "disable": false
+      }, {"name": "5G（无充版）", "id": 100016015104, "active": true, "disable": true}, {
+        "name": "5G（无充）质保换新版",
+        "id": 100016015125,
+        "active": false,
+        "disable": false
+      }]
+    }],
   "Goods": {
     "skuId": "100016015112",
     "price": "4599.00",
@@ -277,21 +308,15 @@ const cmt = ref(
   }
 )
 
-const swiperList = ref([
-  'https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg',
-  'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg',
-  'https://storage.360buyimg.com/jdc-article/welcomenutui.jpg',
-  'https://storage.360buyimg.com/jdc-article/fristfabu.jpg'
-])
-
 // 切换规格类目
 const selectSku = (ss) => {
   const {sku, skuIndex, parentSku, parentIndex} = ss
+  console.log('点击了规格类目', sku, skuIndex, parentSku, parentIndex)
   if (sku.disable) return false
-  requestData.sku[parentIndex].list.forEach((s) => {
+  data.value.sku[parentIndex].list.forEach((s) => {
     s.active = s.id == sku.id
   })
-  requestData.goods = {
+  data.value.goods = {
     skuId: sku.id,
     price: '4599.00',
     imagePath: '//img14.360buyimg.com/n4/jfs/t1/215845/12/3788/221990/618a5c4dEc71cb4c7/7bd6eb8d17830991.jpg'
@@ -305,7 +330,6 @@ const clickBtnOperate = (op) => {
 const close = () => {
 }
 
+const base = ref(false)
 </script>
-<style scoped>
 
-</style>

@@ -23,6 +23,8 @@ declare module 'vue' {
     NutNoticebar: typeof import('@nutui/nutui-taro')['Noticebar']
     NutSearchbar: typeof import('@nutui/nutui-taro')['Searchbar']
     NutSku: typeof import('@nutui/nutui-taro')['Sku']
+    NutStep: typeof import('@nutui/nutui-taro')['Step']
+    NutSteps: typeof import('@nutui/nutui-taro')['Steps']
     NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
     NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']
     NutTabPane: typeof import('@nutui/nutui-taro')['TabPane']

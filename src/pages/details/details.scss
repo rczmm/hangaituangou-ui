@@ -3,20 +3,31 @@
   width: 100%;
 }
 
+.swiper_view {
+  height: 40%;
+  background-color: red;
+}
+
+.product_guide {
+  width: 95%;
+  margin: 10px auto;
+  background-color: rgb(255, 255, 255);
+}
+
 .card-comment {
   border-radius: 25px;
-  width: 90%;
-  margin: 20px auto;
+  width: 95%;
+  margin: 30px auto;
   padding: 10px;
-
+  background-color: rgb(255, 255, 255);
 }
 
 .product_details_card {
-  width: 90%;
+  width: 95%;
   height: 300px;
   border-radius: 25px;
   background-color: rgb(255, 255, 255);
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 .product_price {
@@ -28,4 +39,18 @@
 
 .product_desc {
   font-size: 20px;
+}
+
+.guide_step {
+  margin: 20px auto;
+}
+
+.buy_view {
+  position: fixed;
+  bottom: 0;
+  left: 0; // 通常需要设置 left: 0 和 width: 100% 以占据整个底部宽度
+  width: 100%;
+  height: 100px; // 设置底部 view 的高度
+  background-color: #f0f0f0; // 设置背景色
+  z-index: 999; // 可选，设置 z-index 以确保在其他元素之上
 }
