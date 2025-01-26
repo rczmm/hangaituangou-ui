@@ -28,6 +28,13 @@
           {{ tag }}
         </nut-tag>
       </view>
+      <!-- 自提点-->
+      <view class="product_position">
+        <text>自提点：{{ product.position }}</text>
+      </view>
+      <view class="product_time">
+        <text>{{ product.time }}</text>
+      </view>
 
     </view>
 
@@ -83,7 +90,8 @@ interface Product {
   tags: string[];
   imagePath: string[];
   desc: string;
-  position: string
+  position: string;
+  time: string;
 }
 
 const id = ref<ID | null>(null);
@@ -95,7 +103,8 @@ const product = reactive<Product>({
   tags: [],
   imagePath: [],
   desc: '',
-  position: ''
+  position: '',
+  time: ''
 })
 
 onMounted(
@@ -114,6 +123,8 @@ onMounted(
     product.price = 4599
     product.tags = ['热销', '新品']
     product.desc = '华为 Mate 30 Pro 5G手机，双模5G全网通，AI变焦双摄，AI超级夜景'
+    product.position = '星际一号转运中心'
+    product.time = '明日16:00前到达自提点'
     console.log('product', product)
     if (id.value) {
       try {
