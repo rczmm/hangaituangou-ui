@@ -10,6 +10,7 @@
         :shop-desc="state.shopDesc"
         :delivery="state.delivery"
         :shop-name="state.shopName"
+        @click="handleClick(state.id)"
       >
         <!-- 标签列表     -->
         <template #prolist>
@@ -25,6 +26,7 @@
 <script setup>
 import {defineProps} from 'vue';
 import './CardList.scss'
+import Taro from "@tarojs/taro";
 
 const props = defineProps({
   items: {
@@ -32,6 +34,15 @@ const props = defineProps({
     required: true
   }
 });
+
+const handleClick = id => {
+  console.log('click');
+  Taro.navigateTo({
+    url: `../details/details?id=${id}`
+  })
+}
+
+
 </script>
 
 <style scoped>

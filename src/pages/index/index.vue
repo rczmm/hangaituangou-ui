@@ -56,7 +56,7 @@
 
     <nut-divider/>
 
-
+    <!--标签区域-->
     <view class="scroll-view">
       <view class="scroll-item">
         <nut-tag type="danger" plain round> 天天抽奖</nut-tag>
@@ -94,16 +94,16 @@
 
 
     <!-- 列表  -->
-    <view class="cardList-backtop">
-      <nut-backtop height="calc(100vh - 100px)">
-        <template #content>
-          <view ref="scrollDiv" class="scroll-container" @scroll="handleScroll">
-            <CardList :items="state">
-            </CardList>
-          </view>
-        </template>
-      </nut-backtop>
-    </view>
+    <scroll-view
+      :scroll-y="true"
+      style="height: 500px"
+      @scrolltolower="handleScroll"
+    >
+      <CardList :items="state">
+      </CardList>
+    </scroll-view>
+
+
   </view>
 </template>
 
@@ -159,6 +159,7 @@ const swiperList = ref([
 const state = ref(
   [
     {
+      id: 1,
       imgUrl:
         '//gw.alicdn.com/bao/uploaded/i3/1624565934/O1CN01RTTRFy1thoztFTvWl_!!0-item_pic.jpg_300x300q90.jpg',
       title: '法式复古玫瑰ins少女心床裙款田园风小碎花床上四件套全棉纯棉1.5',
@@ -255,7 +256,6 @@ const getSwiperImage = async () => {
 }
 
 // 定义响应式变量
-const scrollDiv = ref(null);
 const currentPage = ref(1);
 const limit = 10;
 
@@ -277,16 +277,10 @@ const getStateList = async () => {
 
 // 处理滚动事件的函数
 const handleScroll = () => {
-
-  const {scrollTop, clientHeight, scrollHeight} = scrollDiv.value;
   // 判断是否滚动到了底部
-  console.log(scrollDiv.value)
-  console.log(scrollTop, clientHeight, scrollHeight)
-  if (scrollTop + clientHeight >= scrollHeight - 10) {
-    // 滚动到底部，加载下一页数据
-    console.log("触发了滑动时间")
-    getStateList();
-  }
+  console.log("触发了滑动事件")
+  getStateList();
+
 };
 
 onMounted(() => {

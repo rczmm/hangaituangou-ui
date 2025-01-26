@@ -23,9 +23,6 @@ export default {
         pagePath: 'pages/index/index',
         text: '首页'
       }, {
-        pagePath: 'pages/details/details',
-        text: '详情',
-      }, {
         pagePath: 'pages/my/my',
         text: '我的'
       }, {

@@ -1,7 +1,27 @@
+.details{
+  background-color: rgb(244, 248, 247);
+  width: 100%;
+}
+
 .card-comment {
   border-radius: 25px;
   width: 90%;
   margin: 20px auto;
   padding: 10px;
 
+}
+
+.product_details_card {
+  width: 90%;
+  height: 300px;
+  border-radius: 25px;
+  background-color: rgb(255, 255, 255);
+  margin: 20px auto;
+}
+
+.product_price{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 40px;
+  color: red;
 }

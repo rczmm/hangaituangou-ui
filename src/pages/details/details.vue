@@ -1,20 +1,34 @@
 <template>
   <view class="details">
-
     <view class="a">
       <!--  轮播图 -->
       <nut-swiper :auto-play="3000" loop direction="vertical" style="height: 150px">
-        <nut-swiper-item v-for="(item, index) in swiperList" :key="index" style="height: 150px">
+        <nut-swiper-item v-for="(item, index) in product.imagePath" :key="index" style="height: 150px">
           <img :src="item" alt="" style="height: 100%; width: 100%" draggable="false"/>
         </nut-swiper-item>
       </nut-swiper>
     </view>
     <!-- 商品其他信息，名称 价格等   -->
+    <view class="product_details_card">
+      <!--      商品价格-->
+      <view class="product_price">
+        <text>￥{{ product.price }}</text>
+      </view>
+      <view class="product_name">
+        <text>{{ product.name }}</text>
+      </view>
+      <!--      商品标签-->
+      <view class="product_tag">
 
+        <nut-tag v-for="(tag, index) in product.tags" :key="index" :type="'danger'" :size="'big'" :shape="'circle'">
+          {{ tag }}
+        </nut-tag>
+      </view>
+
+    </view>
 
     <!-- 列表   -->
     <!-- 带有追评的评论   -->
-
     <view class="card-comment">
       <nut-comment
         imagesRows="multi"
@@ -48,9 +62,74 @@
 
 <script setup lang="ts">
 
-import {ref} from "vue";
+import {onMounted, reactive, ref} from "vue";
 
 import './details.scss'
+import Taro from "@tarojs/taro";
+
+
+interface ID {
+  value: string
+}
+
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  tags: string[];
+  imagePath: string[];
+}
+
+const id = ref<ID | null>(null);
+
+const product = reactive<Product>({
+  id: '',
+  name: '',
+  price: 0,
+  tags: [],
+  imagePath: []
+})
+
+onMounted(
+  async () => {
+    const currentInstance = Taro.getCurrentInstance();
+    const idParam = currentInstance.router?.params?.id;
+    id.value = idParam ? {value: idParam} : null;
+    console.log('id', id.value)
+    // 数据模拟
+    product.imagePath = [
+      "https://img30.360buyimg.com/imagetools/jfs/t1/153847/3/5051/62777/5fa65e01Ec88cecb9/36ba206949050b39.jpg",
+      "https://img30.360buyimg.com/imagetools/jfs/t1/131794/19/15190/57841/5fa65e03E75c12ef1/0d1ac3a87ff9e398.jpg",
+      "https://img30.360buyimg.com/imagetools/jfs/t1/155091/12/4926/68141/5fa65e03E9d8c5120/9c71b6e49f1eb3c3.jpg",
+    ]
+    product.name = '华为 Mate 30 Pro'
+    product.price = 4599
+    product.tags = ['热销', '新品']
+    console.log('product', product)
+    if (id.value) {
+      try {
+        // 根据 ID 请求商品数据
+        const res = await Taro.request({
+          url: `/api/products/${id.value}`, // 替换为你的 API 地址
+        });
+        product.id = res.data.id;
+        product.imagePath = res.data.imagePath;
+      } catch (error) {
+        console.error('获取商品信息失败：', error);
+        Taro.showToast({
+          title: '加载失败',
+          icon: 'none',
+        });
+        return {id, product}
+      }
+    } else {
+      Taro.showToast({
+        title: '商品ID不存在',
+        icon: 'none',
+      });
+    }
+  }
+)
 
 
 const requestData = {
