@@ -5,7 +5,7 @@ export default {
     'pages/category/category',
     'pages/my/my',
     'pages/address/address',
-    'pages/class/class'
+    'pages/classes/classes'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -29,7 +29,7 @@ export default {
         pagePath: 'pages/address/address',
         text: '地址'
       }, {
-        pagePath: 'pages/class/class',
+        pagePath: 'pages/classes/classes',
         text: '类别'
       }
     ]

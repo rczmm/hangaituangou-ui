@@ -1,0 +1,24 @@
+.classes-view {
+  height: 100%;
+}
+
+.scroll-view {
+  white-space: nowrap; // 关键：使内容不换行，实现横向滚动
+  padding: 10px; // 可选：添加一些内边距
+  overflow-x: auto;
+}
+
+.scroll-item {
+  display: inline-flex; // 关键：使元素水平排列
+  flex-direction: column;
+  align-items: center; // 图标和文字垂直居中
+  margin-right: 20px;
+  flex-shrink: 0; // 防止item被压缩
+}
+
+.scroll-view::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+

@@ -1,72 +1,80 @@
 <template>
+  <view class="classes-view">
+    <!-- 横向滚动列表  -->
+    <scroll-view :scroll-x="true" class="scroll-view" style="width: 100%">
+      <view
+        v-for="item in itemList"
+        :key="item.id"
+        class="scroll-item"
+        @click="getItemList(item)"
+      >
+        <icon-font
+          font-class-name="iconfont"
+          class-prefix="icon"
+          :name="item.icon"
+          :size="50"
+          color="green"
+        ></icon-font>
+        <text style="font-size: 15px;">{{ item.text }}</text>
+      </view>
+    </scroll-view>
 
-  <!-- 横向滚动列表  -->
-  <view class="scroll-view">
-    <view class="scroll-item">
-      <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                 :size="50" color="green"></icon-font>
-      <text style="font-size: 15px;">蔬菜瓜果</text>
-    </view>
-    <view class="scroll-item">
-      <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                 :size="50" color="green"></icon-font>
-      <text style="font-size: 15px;">蔬菜瓜果</text>
-    </view>
-    <view class="scroll-item">
-      <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                 :size="50" color="green"></icon-font>
-      <text style="font-size: 15px;">蔬菜瓜果</text>
-    </view>
-    <view class="scroll-item">
-      <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                 :size="50" color="green"></icon-font>
-      <text style="font-size: 15px;">蔬菜瓜果</text>
-    </view>
-    <view class="scroll-item">
-      <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                 :size="50" color="green"></icon-font>
-      <text style="font-size: 15px;">蔬菜瓜果</text>
-    </view>
-    <view class="scroll-item">
-      <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                 :size="50" color="green"></icon-font>
-      <text style="font-size: 15px;">蔬菜瓜果</text>
-    </view>
-    <view class="scroll-item">
-      <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                 :size="50" color="green"></icon-font>
-      <text style="font-size: 15px;">蔬菜瓜果</text>
-    </view>
+    <nut-tabs v-model="value" type="smile" title-scroll direction="vertical">
+      <nut-tab-pane
+        v-for="item in items"
+        :key="item.key"
+        :title="item.title"
+        :pane-key="item.key"
+        @onclick="getStateList(item.title,item.category)"
+      >
+        <view class="tab-content">
+          <view v-if="value === item.key">
+            <view v-if="item.key==='1'">
+              <CardList :items="state"></CardList>
+            </view>
+            <view v-else-if="item.key==='2'">
+              <CardList :items="state"></CardList>
+            </view>
+            <view v-else-if="item.key==='3'">
+              <CardList :items="state"></CardList>
+            </view>
+          </view>
+        </view>
+      </nut-tab-pane>
+    </nut-tabs>
   </view>
-
-  <nut-tabs v-model="value" type="smile" title-scroll direction="vertical">
-    <nut-tab-pane
-      v-for="item in items"
-      :key="item.key"
-      :title="item.title"
-      :pane-key="item.key"
-    >
-      <CardList :items="state">
-      </CardList>
-    </nut-tab-pane>
-  </nut-tabs>
 
 </template>
 
 <script setup lang="ts">
 import {IconFont} from "@nutui/icons-vue";
 
-import './class.scss'
-import {ref} from "vue";
+import './classes.scss'
+import {onMounted, reactive, ref} from "vue";
 import CardList from "../../components/CardList/CardList.vue";
+import Taro from "@tarojs/taro";
 
 const value = ref('1')
 
+interface Item {
+  id: number;
+  icon: string;
+  text: string;
+}
+
+const itemList = reactive<Item[]>([
+  {id: 1, icon: 'shengdanbingqilin', text: '蔬菜瓜果'},
+  {id: 2, icon: 'shengdanbingqilin', text: '新鲜水果'},
+  {id: 3, icon: 'shengdanbingqilin', text: '时令蔬菜'},
+  {id: 4, icon: 'shengdanbingqilin', text: '进口水果'},
+  {id: 5, icon: 'shengdanbingqilin', text: '叶菜类'},
+  {id: 6, icon: 'shengdanbingqilin', text: '根茎类'},
+  {id: 7, icon: 'shengdanbingqilin', text: '菌菇类'},
+]);
+
 const items = ref([
-  {key: '1', title: 'Tab 1', content: 'Content of Tab 1'},
-  {key: '2', title: 'Tab 1', content: 'Content of Tab 1'},
-  {key: '3', title: 'Tab 1', content: 'Content of Tab 1'},
-  {key: '4', title: 'Tab 1', content: 'Content of Tab 1'}
+  {key: '1', title: 'Tab 1', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: '2', title: 'Tab 1', content: 'Content of Tab 1', category: '蔬菜瓜果'}
 ]);
 
 const state = ref([
@@ -153,6 +161,42 @@ const state = ref([
     tags: ['生鲜', '热销', '大卖']
   }
 ])
+
+const getStateList = (title: string, category: string) => {
+  Taro.request({
+    url: 'https://api.taro-admin.com/api/v1/state',
+    method: 'GET',
+    data: {
+      category: category,
+      title: title,
+      page: 1,
+      limit: 10
+    }
+  }).then(res => {
+    state.value = res.data;
+  })
+  console.log('getStateList', title)
+}
+
+const getItemList = (item: Item) => {
+  console.log('点击了：', item.text);
+  Taro.request({
+    url: 'https://api.taro-admin.com/api/v1/state',
+    method: 'GET',
+    data: {
+      title: item.text,
+      page: 1,
+      limit: 10
+    }
+  }).then(res => {
+    items.value = res.data;
+  })
+}
+
+onMounted(async () => {
+  getItemList(itemList[0])
+  getStateList("", itemList[0].text)
+})
 
 
 </script>
