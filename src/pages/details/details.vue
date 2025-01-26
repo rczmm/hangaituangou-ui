@@ -14,12 +14,16 @@
       <view class="product_price">
         <text>￥{{ product.price }}</text>
       </view>
+      <!-- 商品名称     -->
       <view class="product_name">
         <text>{{ product.name }}</text>
       </view>
-      <!--      商品标签-->
+      <!--      商品描述-->
+      <view class="product_desc">
+        <text>{{ product.desc }}</text>
+      </view>
+      <!-- 商品标签-->
       <view class="product_tag">
-
         <nut-tag v-for="(tag, index) in product.tags" :key="index" :type="'danger'" :size="'big'" :shape="'circle'">
           {{ tag }}
         </nut-tag>
@@ -78,6 +82,8 @@ interface Product {
   price: number;
   tags: string[];
   imagePath: string[];
+  desc: string;
+  position: string
 }
 
 const id = ref<ID | null>(null);
@@ -87,7 +93,9 @@ const product = reactive<Product>({
   name: '',
   price: 0,
   tags: [],
-  imagePath: []
+  imagePath: [],
+  desc: '',
+  position: ''
 })
 
 onMounted(
@@ -105,6 +113,7 @@ onMounted(
     product.name = '华为 Mate 30 Pro'
     product.price = 4599
     product.tags = ['热销', '新品']
+    product.desc = '华为 Mate 30 Pro 5G手机，双模5G全网通，AI变焦双摄，AI超级夜景'
     console.log('product', product)
     if (id.value) {
       try {
