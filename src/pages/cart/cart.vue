@@ -32,34 +32,31 @@
       </view>
     </view>
 
-    <view class="shop-list">
-      <view class="shop-item" v-for="item in state" @click="toggleCheck(item)">
-        <checkbox :checked="item.checked">
-          <view class="shop-info">
-            <view class="shop-name">
-              <text>商品名称</text>
-            </view>
-            <view class="shop-price">
-              <text>￥100</text>
-            </view>
-          </view>
-        </checkbox>
-      </view>
-    </view>
+    <ShopList :state="state">
+    </ShopList>
 
     <view class="pay">
-      <nut-button type="primary" @click="pay">去结算</nut-button>
+      <view class="pay-info">
+        <view class="pay-info-left">
+          <text>合计</text>
+          <text>已选商品</text>
+        </view>
+        <view class="pay-info-right">
+          <text>￥ {{ checkedPrice }}</text>
+          <text>{{ checkedCount }}</text>
+        </view>
+      </view>
+      <nut-button class="pay-btn" type="primary" @click="pay">去结算</nut-button>
     </view>
-
-
   </view>
+
 
 </template>
 
 <script setup lang="ts">
 import './cart.scss'
 import {IconFont} from "@nutui/icons-vue";
-import {reactive} from "vue";
+import {computed, reactive} from "vue";
 
 interface Item {
   id: number;
@@ -74,7 +71,7 @@ const state = reactive<Item[]>([
     id: 1,
     name: '商品名称',
     price: 100,
-    count: 1,
+    count: 10,
     checked: true
   },
   {
@@ -93,12 +90,19 @@ const state = reactive<Item[]>([
   },
 ])
 
-const toggleCheck = (item: Item) => {
-  item.checked = !item.checked;
-};
-
 const pay = () => {
   console.log(state)
 }
+
+// 计算属性 获取选中商品数量
+const checkedCount = computed(() => {
+  return state.filter(item => item.checked).reduce((acc, cur) => acc + cur.count, 0)
+})
+
+// 计算属性 获取选中商品总价
+const checkedPrice = computed(() => {
+  return state.filter(item => item.checked).reduce((acc, cur) => acc + cur.price * cur.count, 0)
+})
+
 
 </script>

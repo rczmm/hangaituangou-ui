@@ -1,1 +1,72 @@
+.cart-container {
+  background-color: rgb(244, 248, 247);
+}
 
+.address-card {
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  margin: 10px 20px;
+}
+
+.address-name,
+.person-info {
+  padding: 10px 20px;
+  //background-color: #0077aa;
+}
+
+.address-details {
+  padding: 10px 70px;
+
+}
+
+
+.pay {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  padding: 10px 20px;
+  border-top: 1px solid #eee;
+}
+
+.pay-info {
+  display: flex; /* 使左侧内容区域也使用 Flexbox 布局 */
+  flex-direction: row; /* 设置主轴方向为水平 */
+  align-items: center; /* 垂直居中 */
+  flex: 1; /* 允许 pay-info 区域占据剩余空间 */
+}
+
+.pay-info-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直方向内容居中 */
+}
+
+.pay-info-left text {
+  font-size: 20px;
+  color: #333;
+  margin: 2px 0; /* 上下间距 */
+}
+
+.pay-info-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* 右对齐 */
+  justify-content: center; /* 垂直方向内容居中 */
+}
+
+.pay-info-right text {
+  font-size: 18px;
+  color: #333;
+  margin: 2px 0; /* 上下间距 */
+}
+
+.pay-info-right text:first-child {
+  font-weight: bold;
+}
+
+.pay-btn {
+  margin-right: 40px; /* 与左侧内容区域间隔 */
+}

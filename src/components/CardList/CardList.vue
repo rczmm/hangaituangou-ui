@@ -28,13 +28,12 @@ import {defineProps} from 'vue';
 import './CardList.scss'
 import Taro from "@tarojs/taro";
 
-const props = defineProps({
+defineProps({
   items: {
     type: Array,
     required: true
   }
 });
-
 const handleClick = id => {
   console.log('click');
   Taro.navigateTo({
@@ -45,6 +44,3 @@ const handleClick = id => {
 
 </script>
 
-<style scoped>
-
-</style>
