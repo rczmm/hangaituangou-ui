@@ -58,6 +58,12 @@ export default defineConfig<'webpack5'>(async (merge, {command, mode}) => {
         },
         optimizeMainPackage: {
           enable: true
+        },
+        scss: {
+          enable: true,
+          config: {
+            additionalData: require('sass')
+          }
         }
       },
       webpackChain(chain) {

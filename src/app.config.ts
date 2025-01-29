@@ -5,7 +5,8 @@ export default {
     'pages/category/category',
     'pages/my/my',
     'pages/address/address',
-    'pages/classes/classes'
+    'pages/classes/classes',
+    'pages/cart/cart'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -26,11 +27,11 @@ export default {
         pagePath: 'pages/my/my',
         text: '我的'
       }, {
-        pagePath: 'pages/address/address',
-        text: '地址'
-      }, {
         pagePath: 'pages/classes/classes',
         text: '类别'
+      }, {
+        pagePath: 'pages/cart/cart',
+        text: '购物车'
       }
     ]
   }
