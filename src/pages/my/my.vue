@@ -13,7 +13,7 @@
     <nut-divider/>
 
     <nut-grid :column-num="5">
-      <nut-grid-item text="待支付">
+      <nut-grid-item text="待支付" @click="navToOrder">
         <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
                    :size="25" color="red"></icon-font>
       </nut-grid-item>
@@ -102,6 +102,7 @@
 import {IconFont} from "@nutui/icons-vue";
 import {ref} from "vue";
 import './my.scss'
+import Taro from "@tarojs/taro";
 
 const value = ref('1')
 
@@ -129,5 +130,12 @@ const navList = ref([
     icon: 'https://img12.360buyimg.com/imagetools/jfs/t1/147573/29/1603/1721/5ef83e94E1393a678/5ddf1695ec989373.png'
   }
 ])
+
+const navToOrder = () => {
+  Taro.navigateTo({
+    url: '/pages/order/order'
+  })
+}
+
 
 </script>

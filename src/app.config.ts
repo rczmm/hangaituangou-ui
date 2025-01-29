@@ -6,7 +6,8 @@ export default {
     'pages/my/my',
     'pages/address/address',
     'pages/classes/classes',
-    'pages/cart/cart'
+    'pages/cart/cart',
+    'pages/order/order'
   ],
   window: {
     backgroundTextStyle: 'light',

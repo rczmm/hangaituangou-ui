@@ -1,0 +1,52 @@
+.orderList {
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.orderItem {
+  margin: 20px auto;
+  height: 350px;
+}
+
+.orderItem-header {
+  display: flex;
+  justify-content: space-between;
+  height: 15%;
+}
+
+.orderItem-body {
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderItem-body-scroll {
+  width: 80%;
+  white-space: nowrap;
+  height: 100%;
+  display: flex; /* 关键：开启 Flexbox 布局 */
+}
+
+.orderItem-body-scroll-image {
+  height: 80%;
+  width: 25%;
+  object-fit: fill;
+  border-radius: 20px;
+  align-self: center;
+  margin: 0 15px; /* 修改 margin，取消垂直方向的 margin */
+}
+
+.orderItem-body-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.orderItem-body-pay {
+  // 子元素右对齐
+  display: flex;
+  justify-content: flex-end;
+}
