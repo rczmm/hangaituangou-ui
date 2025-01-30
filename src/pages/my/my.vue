@@ -50,6 +50,10 @@
         <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
                    :size="25" color="red"></icon-font>
       </nut-grid-item>
+      <nut-grid-item text="我是团长" @click="navToFeedBack">
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
+                   :size="25" color="red"></icon-font>
+      </nut-grid-item>
     </nut-grid>
 
     <nut-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 16px' }"> 为您推荐</nut-divider>

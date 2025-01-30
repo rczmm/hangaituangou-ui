@@ -48,9 +48,11 @@ const editClick = () => {
   console.log('Click To Edit')
 }
 
+const delClickSwipe = () => {
+  console.log('Click On DelClickSwipe')
+}
+const addAddress = () => {
+  console.log('Click To Add')
+}
+
 </script>
-
-
-<style scoped>
-
-</style>

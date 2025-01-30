@@ -4,79 +4,10 @@
     <!-- 搜索框   -->
     <nut-searchbar v-model="val">
       <template #leftout> 涵盖团购</template>
-      <template #leftin>
-        <Search2/>
-      </template>
     </nut-searchbar>
 
     <!-- 通知栏   -->
-    <nut-noticebar :text="text" close-mode scrollable/>
-
-    <!-- 栅栏布局   -->
-    <nut-grid>
-      <nut-grid-item text="蔬菜豆品">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                   :size="25" color="green"></icon-font>
-      </nut-grid-item>
-      <nut-grid-item text="水果鲜花">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanguo"
-                   :size="25" color="pink"></icon-font>
-      </nut-grid-item>
-      <nut-grid-item text="休闲零食">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanwanou"
-                   :size="25" color="red"></icon-font>
-      </nut-grid-item>
-      <nut-grid-item text="粮油调味">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanlaorenmao"
-                   :size="25" color="red"></icon-font>
-      </nut-grid-item>
-      <nut-grid-item text="酒水饮料">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
-                   :size="25" color="red"></icon-font>
-      </nut-grid-item>
-      <nut-grid-item text="肉蛋水产">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanwazi"
-                   :size="25" color="red"></icon-font>
-      </nut-grid-item>
-      <nut-grid-item text="个护清洁">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanzhuangshi"
-                   :size="25" color="red"></icon-font>
-      </nut-grid-item>
-      <nut-grid-item text="日用百货">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanshu"
-                   :size="25" color="red"></icon-font>
-      </nut-grid-item>
-    </nut-grid>
-
-    <!-- 弹幕区域  -->
-    <!-- 仅支持小程序   -->
-    <view style="position: relative; height: 150px" class="danmu-view">
-      <nut-barrage ref="barrageRef" :danmu="list"></nut-barrage>
-    </view>
-
-    <nut-divider/>
-
-    <!--标签区域-->
-    <view class="scroll-view">
-      <view class="scroll-item">
-        <nut-tag type="danger" plain round> 天天抽奖</nut-tag>
-      </view>
-      <view class="scroll-item">
-        <nut-tag type="danger" plain round> 签到领钱</nut-tag>
-      </view>
-      <view class="scroll-item">
-        <nut-tag type="danger" plain round> 领券立减</nut-tag>
-      </view>
-      <view class="scroll-item">
-        <nut-tag type="danger" plain round> 团购厨神</nut-tag>
-      </view>
-      <view class="scroll-item">
-        <nut-tag type="danger" plain round> 走路赚钱</nut-tag>
-      </view>
-    </view>
-
-    <nut-divider/>
-
+    <nut-noticebar class="notice-card" :text="text" close-mode scrollable/>
 
     <!--  轮播图 -->
     <nut-swiper
@@ -90,8 +21,88 @@
       </nut-swiper-item>
     </nut-swiper>
 
-    <nut-divider/>
+    <nut-divider :style="{ color: '#fa1a07', borderColor: '#f8d5d2', padding: '0 16px' }"> 最新评论</nut-divider>
 
+    <view class="back-view">
+      <!-- 弹幕区域  -->
+      <view style="position: relative; height: 150px" class="danmu-view">
+        <nut-barrage class="barrage-item" ref="barrageRef" :danmu="list"></nut-barrage>
+      </view>
+
+      <!-- 栅栏布局   -->
+      <view class="grid-view">
+        <nut-grid class="grid-card">
+          <nut-grid-item text="蔬菜豆品" @click="navToCate" class="grid-item">
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
+                       :size="25" color="green"></icon-font>
+          </nut-grid-item>
+          <nut-grid-item text="水果鲜花" @click="navToCate">
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanguo"
+                       :size="25" color="pink"></icon-font>
+          </nut-grid-item>
+          <nut-grid-item text="休闲零食" @click="navToCate">
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanwanou"
+                       :size="25" color="red"></icon-font>
+          </nut-grid-item>
+          <nut-grid-item text="粮油调味" @click="navToCate">
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanlaorenmao"
+                       :size="25" color="red"></icon-font>
+          </nut-grid-item>
+          <nut-grid-item text="酒水饮料" @click="navToCate">
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
+                       :size="25" color="red"></icon-font>
+          </nut-grid-item>
+          <nut-grid-item text="肉蛋水产" @click="navToCate">
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanwazi"
+                       :size="25" color="red"></icon-font>
+          </nut-grid-item>
+          <nut-grid-item text="个护清洁" @click="navToCate">
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanzhuangshi"
+                       :size="25" color="red"></icon-font>
+          </nut-grid-item>
+          <nut-grid-item text="日用百货" @click="navToCate">
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanshu"
+                       :size="25" color="red"></icon-font>
+          </nut-grid-item>
+        </nut-grid>
+      </view>
+    </view>
+
+    <!--标签区域-->
+    <view class="scroll-view">
+      <view class="scroll-item">
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
+                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <text class="scroll-text"> 天天抽奖</text>
+      </view>
+      <view class="scroll-item">
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
+                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <text class="scroll-text"> 签到领鸡蛋</text>
+      </view>
+      <view class="scroll-item">
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
+                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <text class="scroll-text"> 领卷立减</text>
+      </view>
+      <view class="scroll-item">
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
+                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <text class="scroll-text"> 团购厨神</text>
+      </view>
+      <view class="scroll-item">
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
+                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <text class="scroll-text"> 今天吃什么</text>
+      </view>
+      <view class="scroll-item">
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
+                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <text class="scroll-text"> 生鲜答题</text>
+      </view>
+    </view>
+
+    <nut-divider :style="{ color: '#fa1a07', borderColor: '#f8d5d2', padding: '0 16px' }"> 最新上架</nut-divider>
 
     <!-- 列表  -->
     <scroll-view
@@ -149,6 +160,12 @@ const getDanmuList = async () => {
 }
 
 const val = ref('')
+
+const navToCate = () => {
+  Taro.navigateTo({
+    url: '/pages/classes/classes'
+  })
+}
 
 const swiperList = ref([
   'https://img.alicdn.com/imgextra/i3/O1CN017Z2XUL1nnQ94i2MTP_!!6000000005134-0-tps-846-472.jpg',

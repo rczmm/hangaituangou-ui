@@ -31,8 +31,8 @@ export default {
         pagePath: 'pages/my/my',
         text: '我的'
       }, {
-        pagePath: 'pages/classes/classes',
-        text: '类别'
+        pagePath: 'pages/category/category',
+        text: '分类'
       }, {
         pagePath: 'pages/cart/cart',
         text: '购物车'

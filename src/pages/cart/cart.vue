@@ -8,7 +8,7 @@
 
     <view class="address-card">
       <view class="address-info">
-        <view class="address-name">
+        <view class="address-name" @click="navToAddress">
           <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanlaorenmao"
                      :size="25" color="red"/>
           <text>最强自提点 ></text>
@@ -23,7 +23,7 @@
         </view>
       </view>
       <view class="person-info">
-        <view class="person-name">
+        <view class="person-name" @click="navToAddress">
           <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanlaorenmao"
                      :size="25" color="red"/>
           <text>张三</text>
@@ -57,6 +57,7 @@
 import './cart.scss'
 import {IconFont} from "@nutui/icons-vue";
 import {computed, reactive} from "vue";
+import Taro from "@tarojs/taro";
 
 interface Item {
   id: number;
@@ -103,6 +104,12 @@ const checkedCount = computed(() => {
 const checkedPrice = computed(() => {
   return state.filter(item => item.checked).reduce((acc, cur) => acc + cur.price * cur.count, 0)
 })
+
+const navToAddress = () => {
+  Taro.navigateTo({
+    url: '/pages/address/address'
+  })
+}
 
 
 </script>
