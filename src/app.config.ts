@@ -7,7 +7,10 @@ export default {
     'pages/address/address',
     'pages/classes/classes',
     'pages/cart/cart',
-    'pages/order/order'
+    'pages/order/order',
+    'pages/draw/draw',
+    'pages/report/report',
+    'pages/feedback/feedback'
   ],
   window: {
     backgroundTextStyle: 'light',
