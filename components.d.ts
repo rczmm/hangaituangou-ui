@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     CardList: typeof import('./src/components/CardList/CardList.vue')['default']
+    GoodCard: typeof import('./src/components/GoodCard/GoodCard.vue')['default']
     NutAddressList: typeof import('@nutui/nutui-taro')['AddressList']
     NutAvatar: typeof import('@nutui/nutui-taro')['Avatar']
     NutBarrage: typeof import('@nutui/nutui-taro')['Barrage']
@@ -16,7 +17,6 @@ declare module 'vue' {
     NutCategory: typeof import('@nutui/nutui-taro')['Category']
     NutCategoryPane: typeof import('@nutui/nutui-taro')['CategoryPane']
     NutCell: typeof import('@nutui/nutui-taro')['Cell']
-    NutCheckbox: typeof import('@nutui/nutui-taro')['Checkbox']
     NutCollapse: typeof import('@nutui/nutui-taro')['Collapse']
     NutCollapseItem: typeof import('@nutui/nutui-taro')['CollapseItem']
     NutComment: typeof import('@nutui/nutui-taro')['Comment']
@@ -30,6 +30,7 @@ declare module 'vue' {
     NutGridItem: typeof import('@nutui/nutui-taro')['GridItem']
     NutInput: typeof import('@nutui/nutui-taro')['Input']
     NutNoticebar: typeof import('@nutui/nutui-taro')['Noticebar']
+    NutPrice: typeof import('@nutui/nutui-taro')['Price']
     NutSearchbar: typeof import('@nutui/nutui-taro')['Searchbar']
     NutSku: typeof import('@nutui/nutui-taro')['Sku']
     NutSpace: typeof import('@nutui/nutui-taro')['Space']

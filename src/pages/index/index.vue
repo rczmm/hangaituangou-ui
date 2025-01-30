@@ -15,15 +15,19 @@
       loop
       direction="horizontal"
       pagination-visible
+      :frequency="1000"
+      :rows="4"
+      :top="20"
+      :speeds="7000"
     >
       <nut-swiper-item v-for="(item, index) in swiperList" :key="index" style="height: 150px">
         <img :src="item" alt="" style="height: 100%; width: 100%" draggable="false"/>
       </nut-swiper-item>
     </nut-swiper>
 
-    <nut-divider :style="{ color: '#fa1a07', borderColor: '#f8d5d2', padding: '0 16px' }"> 最新评论</nut-divider>
-
     <view class="back-view">
+      <nut-divider :style="{ color: '#fa1a07', borderColor: '#f8d5d2', padding: '0 16px' }"> 最新评论</nut-divider>
+
       <!-- 弹幕区域  -->
       <view style="position: relative; height: 150px" class="danmu-view">
         <nut-barrage class="barrage-item" ref="barrageRef" :danmu="list"></nut-barrage>
@@ -113,14 +117,12 @@
       <CardList :items="state">
       </CardList>
     </scroll-view>
-
-
   </view>
 </template>
 
 <script setup lang="ts">
 import {onMounted, ref} from 'vue'
-import {IconFont, Search2} from "@nutui/icons-vue";
+import {IconFont} from "@nutui/icons-vue";
 import './index.scss';
 import CardList from "../../components/CardList/CardList.vue";
 import Taro from '@tarojs/taro';

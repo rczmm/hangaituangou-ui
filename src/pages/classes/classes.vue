@@ -25,34 +25,48 @@
         :key="item.key"
         :title="item.title"
         :pane-key="item.key"
-        @onclick="getStateList(item.title,item.category)"
+        @click="getStateList(item.title,item.category)"
       >
         <view class="tab-content">
           <view v-if="value === item.key">
             <view v-if="item.key==='1'">
-              <CardList :items="state"></CardList>
+              <GoodCard :state="state"></GoodCard>
             </view>
             <view v-else-if="item.key==='2'">
-              <CardList :items="state"></CardList>
+              <GoodCard :state="state"></GoodCard>
             </view>
             <view v-else-if="item.key==='3'">
-              <CardList :items="state"></CardList>
+              <GoodCard :state="state"></GoodCard>
             </view>
           </view>
         </view>
       </nut-tab-pane>
     </nut-tabs>
+
+    <!-- 底部去支付-->
+    <view class="pay">
+      <view class="pay-info">
+        <view class="pay-info-left">
+          <text>合计</text>
+          <text>已选商品</text>
+        </view>
+        <view class="pay-info-right">
+          <text>￥ {{ checkedPrice }}</text>
+          <text>{{ checkedCount }}</text>
+        </view>
+      </view>
+      <nut-button class="pay-btn" type="primary" @click="pay">去结算</nut-button>
+    </view>
   </view>
 
 </template>
 
 <script setup lang="ts">
 import {IconFont} from "@nutui/icons-vue";
-
 import './classes.scss'
-import {onMounted, reactive, ref} from "vue";
-import CardList from "../../components/CardList/CardList.vue";
+import {computed, onMounted, reactive, ref} from "vue";
 import Taro from "@tarojs/taro";
+import GoodCard from "../../components/GoodCard/GoodCard.vue";
 
 const value = ref('1')
 
@@ -74,91 +88,22 @@ const itemList = reactive<Item[]>([
 
 const items = ref([
   {key: '1', title: 'Tab 1', content: 'Content of Tab 1', category: '蔬菜瓜果'},
-  {key: '2', title: 'Tab 1', content: 'Content of Tab 1', category: '蔬菜瓜果'}
+  {key: '2', title: 'Tab 1', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: '3', title: 'Tab 1', content: 'Content of Tab 1', category: '蔬菜瓜果'}
 ]);
 
 const state = ref([
   {
-    imgUrl:
-      '//gw.alicdn.com/bao/uploaded/i3/1624565934/O1CN01RTTRFy1thoztFTvWl_!!0-item_pic.jpg_300x300q90.jpg',
-    title: '法式复古玫瑰ins少女心床裙款田园风小碎花床上四件套全棉纯棉1.5',
-    price: '258',
-    vipPrice: '378',
-    shopDesc: '自营',
-    delivery: '厂商配送',
-    shopName: '阳澄湖大闸蟹自营店>',
-    tags: ['生鲜', '热销', '大卖']
-  }
-  , {
-    imgUrl:
-      'https://gw.alicdn.com/bao/uploaded/i1/1752732599/TB25KZZobRkpuFjSspmXXc.9XXa_!!1752732599.jpg_300x300q90.jpg',
-    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
-    price: '388',
-    vipPrice: '378',
-    shopDesc: '自营',
-    delivery: '厂商配送',
-    shopName: '阳澄湖大闸蟹自营店>',
-    tags: ['生鲜', '热销', '大卖']
-  }, {
-    imgUrl:
-      'https://gw.alicdn.com/bao/uploaded/i4/675424149/TB2TnxOtHGYBuNjy0FoXXciBFXa_!!675424149.jpg_300x300q90.jpg',
-    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
-    price: '388',
-    vipPrice: '378',
-    shopDesc: '自营',
-    delivery: '厂商配送',
-    shopName: '阳澄湖大闸蟹自营店>',
-    tags: ['生鲜', '热销', '大卖']
-  }, {
-    imgUrl:
-      'https://gw.alicdn.com/bao/uploaded/i4/2567464382/O1CN01fsFDN91iF083IAhd4_!!2567464382.jpg_300x300q90.jpg',
-    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
-    price: '388',
-    vipPrice: '378',
-    shopDesc: '自营',
-    delivery: '厂商配送',
-    shopName: '阳澄湖大闸蟹自营店>',
-    tags: ['生鲜', '热销', '大卖']
-  }, {
-    imgUrl:
-      'https://gw.alicdn.com/bao/uploaded/i1/666394908/O1CN01GCqy2e1m7uRXspfYu_!!666394908.jpg_300x300q90.jpg',
-    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
-    price: '388',
-    vipPrice: '378',
-    shopDesc: '自营',
-    delivery: '厂商配送',
-    shopName: '阳澄湖大闸蟹自营店>',
-    tags: ['生鲜', '热销', '大卖']
-  }, {
-    imgUrl:
-      'https://gw.alicdn.com/bao/uploaded/i3/4134777374/O1CN01bp7zZv24LLBu9m19M_!!4134777374-0-lubanu-s.jpg_300x300q90.jpg',
-    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
-    price: '388',
-    vipPrice: '378',
-    shopDesc: '自营',
-    delivery: '厂商配送',
-    shopName: '阳澄湖大闸蟹自营店>',
-    tags: ['生鲜', '热销', '大卖']
-  }, {
-    imgUrl:
-      'https://gw.alicdn.com/bao/uploaded/i4/1852297523/O1CN01RBHkqS25RaHOtKYO0_!!0-item_pic.jpg_300x300q90.jpg',
-    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
-    price: '388',
-    vipPrice: '378',
-    shopDesc: '自营',
-    delivery: '厂商配送',
-    shopName: '阳澄湖大闸蟹自营店>',
-    tags: ['生鲜', '热销', '大卖']
-  }, {
-    imgUrl:
-      'https://gw.alicdn.com/bao/uploaded/i1/1088183089/O1CN01ZjaYLq1Ygo4uVSSCX_!!1088183089.jpg_300x300q90.jpg_.webp',
-    title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
-    price: '388',
-    vipPrice: '378',
-    shopDesc: '自营',
-    delivery: '厂商配送',
-    shopName: '阳澄湖大闸蟹自营店>',
-    tags: ['生鲜', '热销', '大卖']
+    id: 1,
+    name: "鲜豆腐皮",
+    price: 20,
+    count: 0
+  },
+  {
+    id: 2,
+    name: "新鲜长黄瓜",
+    price: 100,
+    count: 0
   }
 ])
 
@@ -191,6 +136,20 @@ const getItemList = (item: Item) => {
   }).then(res => {
     items.value = res.data;
   })
+}
+
+// 计算属性 获取选中商品数量
+const checkedCount = computed(() => {
+  return state.value.filter(item => item.count >= 1).reduce((acc, cur) => acc + cur.count, 0)
+})
+
+// 计算属性 获取选中商品总价
+const checkedPrice = computed(() => {
+  return state.value.filter(item => item.count >= 1).reduce((acc, cur) => acc + cur.price * cur.count, 0)
+})
+
+const pay = () => {
+  console.log(state)
 }
 
 onMounted(async () => {
