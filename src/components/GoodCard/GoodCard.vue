@@ -2,7 +2,9 @@
 
   <view class="good-list">
 
-    <view class="good-item" v-for="(item, index) in state" :key="index">
+    <view class="good-item" v-for="(item, index) in state" :key="index"
+          @click="navToDetail(item)"
+    >
       <!-- 商品图片 -->
       <view class="good-image">
         <image
@@ -32,6 +34,7 @@
 <script setup lang="ts">
 import './GoodCard.scss';
 import {IconFont} from "@nutui/icons-vue";
+import Taro from "@tarojs/taro";
 
 interface Item {
   id: number;
@@ -53,6 +56,13 @@ const countComputed = (item: Item, sign: string) => {
     }
   }
 }
+
+const navToDetail = (item: any) => {
+  Taro.navigateTo({
+    url: `/pages/details/details?id=${item.id}`
+  })
+}
+
 
 </script>
 
