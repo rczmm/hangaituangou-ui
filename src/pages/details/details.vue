@@ -68,6 +68,8 @@
       </nut-steps>
     </view>
 
+    <nut-divider>最新评论</nut-divider>
+
     <!-- 列表   -->
     <!-- 带有追评的评论   -->
     <view class="card-comment">

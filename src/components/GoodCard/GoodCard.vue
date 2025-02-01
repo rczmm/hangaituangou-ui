@@ -2,11 +2,9 @@
 
   <view class="good-list">
 
-    <view class="good-item" v-for="(item, index) in state" :key="index"
-          @click="navToDetail(item)"
-    >
+    <view class="good-item" v-for="(item, index) in state" :key="index">
       <!-- 商品图片 -->
-      <view class="good-image">
+      <view class="good-image" @click="navToDetail(item)">
         <image
           src="https://img.alicdn.com/bao/uploaded///asearch.alicdn.com/bao/uploaded/O1CN01QlOWmD1loDsfA1o08_!!2203907254865.jpg_460x460q90.jpg_.webp"
           mode="aspectFill"/>

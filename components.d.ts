@@ -30,7 +30,11 @@ declare module 'vue' {
     NutGridItem: typeof import('@nutui/nutui-taro')['GridItem']
     NutInput: typeof import('@nutui/nutui-taro')['Input']
     NutNoticebar: typeof import('@nutui/nutui-taro')['Noticebar']
+    NutPopup: typeof import('@nutui/nutui-taro')['Popup']
     NutPrice: typeof import('@nutui/nutui-taro')['Price']
+    NutRadio: typeof import('@nutui/nutui-taro')['Radio']
+    NutRadioGroup: typeof import('@nutui/nutui-taro')['RadioGroup']
+    NutRate: typeof import('@nutui/nutui-taro')['Rate']
     NutSearchbar: typeof import('@nutui/nutui-taro')['Searchbar']
     NutSku: typeof import('@nutui/nutui-taro')['Sku']
     NutSpace: typeof import('@nutui/nutui-taro')['Space']
@@ -43,7 +47,9 @@ declare module 'vue' {
     NutTag: typeof import('@nutui/nutui-taro')['Tag']
     NutTextarea: typeof import('@nutui/nutui-taro')['Textarea']
     NutUploader: typeof import('@nutui/nutui-taro')['Uploader']
+    OrderCard: typeof import('./src/components/OrderDetail/OrderCard.vue')['default']
     OrderList: typeof import('./src/components/OrderList/OrderList.vue')['default']
+    OrderManage: typeof import('./src/components/OrderManage/OrderManage.vue')['default']
     ShopList: typeof import('./src/components/ShopList/ShopList.vue')['default']
   }
 }

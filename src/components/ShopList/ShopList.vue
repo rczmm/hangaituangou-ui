@@ -1,12 +1,12 @@
 <template>
   <view class="shop-list">
-    <view class="shop-item" v-for="item in state">
+    <view class="shop-item" v-for="item in state" v-show="item.count>=1">
       <!-- 左侧复选框 -->
       <view class="checkbox-wrapper" @click="toggleCheck(item)">
         <checkbox :checked="item.checked" class="custom-checkbox"/>
       </view>
       <!-- 商品图片 -->
-      <view class="product-image">
+      <view class="product-image" @click="navToDetail(item)">
         <image
           src="https://img.alicdn.com/bao/uploaded///asearch.alicdn.com/bao/uploaded/O1CN01QlOWmD1loDsfA1o08_!!2203907254865.jpg_460x460q90.jpg_.webp"
           mode="aspectFill"/>
@@ -28,6 +28,7 @@
 
 <script setup lang="ts">
 import './ShopList.scss'
+import Taro from "@tarojs/taro";
 
 interface Item {
   id: number;
@@ -47,12 +48,18 @@ const toggleCheck = (item: Item) => {
 
 const countComputed = (item: Item, sign: string) => {
   if (sign === 'minus') {
-    if (item.count > 1) {
+    if (item.count >= 1) {
       return item.count--;
     } else {
       return item.count;
     }
   }
+}
+
+const navToDetail = (item: Item) => {
+  Taro.navigateTo({
+    url: `/pages/details/details?id=${item.id}`
+  })
 }
 
 </script>

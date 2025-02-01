@@ -50,7 +50,7 @@
         <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
                    :size="25" color="red"></icon-font>
       </nut-grid-item>
-      <nut-grid-item text="我是团长" @click="navToFeedBack">
+      <nut-grid-item text="我是团长" @click="navToManage">
         <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
                    :size="25" color="red"></icon-font>
       </nut-grid-item>
@@ -60,7 +60,7 @@
 
     <nut-fixed-nav v-model:visible="visible" type="right" :position="{ top: '400px' }" :nav-list="navList"/>
 
-    <nut-tabs v-model="value" type="smile" title-scroll>
+    <nut-tabs v-model="value" auto-height type="smile" title-scroll>
       <nut-tab-pane
         v-for="item in items"
         :key="item.key"
@@ -288,5 +288,10 @@ const navToFeedBack = () => {
   })
 }
 
+const navToManage = () => {
+  Taro.navigateTo({
+    url: '/pages/manage/manage'
+  })
+}
 
 </script>

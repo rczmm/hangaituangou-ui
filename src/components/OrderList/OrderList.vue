@@ -2,7 +2,7 @@
 
   <view class="orderList">
 
-    <view class="orderItem" v-for="item in items" :key="item.id">
+    <view class="orderItem" v-for="item in items" :key="item.id" @click="navToOrderDetail(item.id)">
 
       <view class="orderItem-header">
         <view class="orderItem-header-date">
@@ -42,6 +42,7 @@
 <script setup lang="ts">
 import './OrderList.scss';
 import {reactive} from "vue";
+import Taro from "@tarojs/taro";
 
 const items = reactive([
   {
@@ -79,6 +80,12 @@ const items = reactive([
     num: 10
   }
 ])
+
+const navToOrderDetail = (id: string) => {
+  Taro.navigateTo({
+    url: `/pages/orderDetail/orderDetail?id=${id}`
+  })
+}
 
 defineProps(
   {

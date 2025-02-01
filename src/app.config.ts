@@ -10,7 +10,11 @@ export default {
     'pages/order/order',
     'pages/draw/draw',
     'pages/report/report',
-    'pages/feedback/feedback'
+    'pages/feedback/feedback',
+    'pages/manage/manage',
+    'pages/orderDetail/orderDetail',
+    'pages/returnGood/index',
+    'pages/returnGood/returnForm'
   ],
   window: {
     backgroundTextStyle: 'light',

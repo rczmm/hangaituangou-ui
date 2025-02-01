@@ -19,13 +19,13 @@
       </view>
     </scroll-view>
 
-    <nut-tabs v-model="value" type="smile" title-scroll direction="vertical">
+    <nut-tabs v-model="value" auto-height type="smile" title-scroll direction="vertical">
       <nut-tab-pane
         v-for="item in items"
         :key="item.key"
         :title="item.title"
         :pane-key="item.key"
-        @click="getStateList(item.title,item.category)"
+        :click="getStateList(item.title,item.category)"
       >
         <view class="tab-content">
           <view v-if="value === item.key">
