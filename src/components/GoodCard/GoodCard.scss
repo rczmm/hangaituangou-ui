@@ -24,21 +24,24 @@
 }
 
 .good-info {
-  position: relative;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+
+}
+
+.good-name {
+  margin-top: 10px;
 }
 
 .good-price {
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .quantity-control {
-  position: absolute;
   display: flex;
-  right: 10px;
-  bottom: 10px;
+  align-self: flex-end;
+  margin-top: 100px;
   border: 1px solid #ccc; /* 添加边框 */
   border-radius: 2px; /* 添加圆角 */
   overflow: hidden; /* 隐藏按钮溢出部分 */

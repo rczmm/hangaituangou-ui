@@ -23,7 +23,6 @@
                       :size="25" color="red"></IconFont>
           </nut-button>
         </view>
-
       </view>
     </view>
   </view>
