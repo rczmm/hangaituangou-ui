@@ -2,7 +2,7 @@
   <view class="index">
 
     <!-- 搜索框   -->
-    <nut-searchbar v-model="val">
+    <nut-searchbar v-model="val" @search="navToSearch(val)">
       <template #leftout> 涵盖团购</template>
     </nut-searchbar>
 
@@ -168,6 +168,13 @@ const navToCate = () => {
     url: '/pages/classes/classes'
   })
 }
+
+const navToSearch = (val: string) => {
+  Taro.navigateTo({
+    url: `/pages/search/index?key=${val}`
+  })
+}
+
 
 const swiperList = ref([
   'https://img.alicdn.com/imgextra/i3/O1CN017Z2XUL1nnQ94i2MTP_!!6000000005134-0-tps-846-472.jpg',

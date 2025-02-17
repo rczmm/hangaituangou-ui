@@ -14,7 +14,8 @@ export default {
     'pages/manage/manage',
     'pages/orderDetail/orderDetail',
     'pages/returnGood/index',
-    'pages/returnGood/returnForm'
+    'pages/returnGood/returnForm',
+    'pages/search/index'
   ],
   window: {
     backgroundTextStyle: 'light',
