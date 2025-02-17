@@ -5,18 +5,18 @@
     <nut-searchbar></nut-searchbar>
 
     <view class="search-list">
-      <view class="search-item">
+      <view class="search-item" v-for="item in searchList" :key="item.id">
         <image class="search-item-image"
-               src="https://i0.hdslb.com/bfs/archive/61abe3e1e46506665815a1c35491f9025fb003a4.jpg" alt="1"></image>
+               :src="item.image" alt="1"></image>
         <view class="search-item-info">
           <view class="search-item-title">
-            <text>我是标题</text>
+            <text>{{ item.title }}</text>
           </view>
           <view class="search-item-price">
-            <nut-price :price="100" symbol="￥" size="normal"/>
+            <nut-price :price="item.price" symbol="￥" size="normal"/>
           </view>
-          <view class="search-item-tags">
-            <text>冷藏</text>
+          <view class="search-item-tags" v-for="tag in item.tags">
+            <text>{{ tag }}</text>
           </view>
         </view>
       </view>
@@ -30,6 +30,59 @@
 
 <script setup lang="ts">
 import './index.scss';
+import {ref} from "vue";
+
+const searchList = ref([
+  {
+    id: 1,
+    title: '我是标题',
+    price: 100,
+    tags: ['冷藏'],
+    image: 'https://i0.hdslb.com/bfs/archive/61abe3e1e46506665815a1c35491f9025fb003a4.jpg'
+  }, {
+    id: 1,
+    title: '我是标题',
+    price: 100,
+    tags: ['冷藏'],
+    image: 'https://i0.hdslb.com/bfs/archive/61abe3e1e46506665815a1c35491f9025fb003a4.jpg'
+  }, {
+    id: 1,
+    title: '我是标题',
+    price: 100,
+    tags: ['冷藏'],
+    image: 'https://i0.hdslb.com/bfs/archive/61abe3e1e46506665815a1c35491f9025fb003a4.jpg'
+  }, {
+    id: 1,
+    title: '我是标题',
+    price: 100,
+    tags: ['冷藏'],
+    image: 'https://i0.hdslb.com/bfs/archive/61abe3e1e46506665815a1c35491f9025fb003a4.jpg'
+  }, {
+    id: 1,
+    title: '我是标题',
+    price: 100,
+    tags: ['冷藏'],
+    image: 'https://i0.hdslb.com/bfs/archive/61abe3e1e46506665815a1c35491f9025fb003a4.jpg'
+  }, {
+    id: 1,
+    title: '我是标题',
+    price: 100,
+    tags: ['冷藏'],
+    image: 'https://i0.hdslb.com/bfs/archive/61abe3e1e46506665815a1c35491f9025fb003a4.jpg'
+  }, {
+    id: 1,
+    title: '我是标题',
+    price: 100,
+    tags: ['冷藏'],
+    image: 'https://i0.hdslb.com/bfs/archive/61abe3e1e46506665815a1c35491f9025fb003a4.jpg'
+  }, {
+    id: 1,
+    title: '我是标题',
+    price: 100,
+    tags: ['冷藏'],
+    image: 'https://i0.hdslb.com/bfs/archive/61abe3e1e46506665815a1c35491f9025fb003a4.jpg'
+  }
+])
 
 
 </script>
