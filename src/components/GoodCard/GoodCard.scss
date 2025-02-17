@@ -18,7 +18,7 @@
 
   image {
     border-radius: 20px; // 设置图片的圆角
-    max-width: 100%;
+    max-width: 95%;
     height: 100%;
     object-fit: cover;
   }
@@ -43,6 +43,7 @@
   display: flex;
   align-self: flex-end;
   margin-top: 100px;
+  margin-right: 50px;
   border-radius: 2px; /* 添加圆角 */
   overflow: hidden; /* 隐藏按钮溢出部分 */
 }

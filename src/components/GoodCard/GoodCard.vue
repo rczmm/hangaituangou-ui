@@ -19,7 +19,7 @@
           <text v-if="item.count!=0" class="count">{{ item.count }}</text>
           <nut-button v-if="item.count!=0" class="plus" @click="item.count++">+</nut-button>
           <nut-button v-if="item.count==0" class="plus" @click="item.count++">
-            <IconFont font-class-name="iconfont" class-prefix="icon" name="gouwu"
+            <IconFont font-class-name="iconfont" class-prefix="icon" name="gouwuche"
                       :size="25"></IconFont>
           </nut-button>
         </view>
