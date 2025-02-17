@@ -87,9 +87,9 @@ const itemList = reactive<Item[]>([
 ]);
 
 const items = ref([
-  {key: '1', title: 'Tab 1', content: 'Content of Tab 1', category: '蔬菜瓜果'},
-  {key: '2', title: 'Tab 1', content: 'Content of Tab 1', category: '蔬菜瓜果'},
-  {key: '3', title: 'Tab 1', content: 'Content of Tab 1', category: '蔬菜瓜果'}
+  {key: '1', title: '绿叶菜', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: '2', title: '土豆根茎', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: '3', title: '我是水果', content: 'Content of Tab 1', category: '蔬菜瓜果'}
 ]);
 
 const state = ref([
