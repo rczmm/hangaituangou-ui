@@ -4,7 +4,7 @@
 
     <nut-searchbar></nut-searchbar>
 
-    <ShopList :state="state"></ShopList>
+    <GoodCard :state="state"></GoodCard>
 
 
   </view>
@@ -15,6 +15,7 @@
 <script setup lang="ts">
 import './index.scss';
 import {reactive} from "vue";
+import GoodCard from "../../components/GoodCard/GoodCard.vue";
 
 interface Item {
   id: number;
