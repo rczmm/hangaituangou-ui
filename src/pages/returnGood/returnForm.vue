@@ -42,6 +42,7 @@ import Taro from "@tarojs/taro";
 const show = ref(false);
 const val = ref(1);
 const desc = ['重量不足', '商品破损|压坏|脏污', '商品过期', '其他原因'];
+const image = ''
 
 const orderId = ref('');
 const totalPrice = ref(0);
