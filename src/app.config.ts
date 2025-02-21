@@ -18,7 +18,9 @@ export default {
     'pages/search/index',
     'pages/payment/payment',
     'pages/profit/index',
-    'pages/profit/withdraw'
+    'pages/profit/withdraw',
+    'pages/profit/profit',
+    'pages/OrderManage/OrderManage'
   ],
   window: {
     backgroundTextStyle: 'light',

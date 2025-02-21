@@ -50,7 +50,6 @@ declare module 'vue' {
     NutUploader: typeof import('@nutui/nutui-taro')['Uploader']
     OrderCard: typeof import('./src/components/OrderDetail/OrderCard.vue')['default']
     OrderList: typeof import('./src/components/OrderList/OrderList.vue')['default']
-    OrderManage: typeof import('./src/components/OrderManage/OrderManage.vue')['default']
     ShopList: typeof import('./src/components/ShopList/ShopList.vue')['default']
   }
 }

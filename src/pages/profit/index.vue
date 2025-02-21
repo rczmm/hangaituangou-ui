@@ -28,34 +28,77 @@
       <view class="list-header">
         <text class="title">收益明细</text>
       </view>
-      <nut-cell-group>
-        <nut-cell v-for="item in profitList" :key="item.id" class="profit-item">
-          <template #title>
-            <view class="profit-info">
-              <text class="order-id">订单号：{{ item.orderId }}</text>
-              <text class="profit-amount">+{{ item.amount }}元</text>
-            </view>
-          </template>
-          <template #desc>
-            <view class="profit-detail">
-              <text class="time">{{ item.time }}</text>
-              <text class="status">{{ item.status }}</text>
-            </view>
-          </template>
-        </nut-cell>
-      </nut-cell-group>
+      <nut-tabs v-model="activeTab">
+        <nut-tab-pane title="全部收益" :pane-key="'all'">
+          <nut-cell-group>
+            <nut-cell v-for="item in filteredProfitList" :key="item.id" class="profit-item">
+              <template #title>
+                <view class="profit-info">
+                  <text class="order-id">订单号：{{ item.orderId }}</text>
+                  <text class="profit-amount">+{{ item.amount }}元</text>
+                </view>
+              </template>
+              <template #desc>
+                <view class="profit-detail">
+                  <text class="time">{{ item.time }}</text>
+                  <text class="status">{{ item.status }}</text>
+                </view>
+              </template>
+            </nut-cell>
+          </nut-cell-group>
+        </nut-tab-pane>
+        <nut-tab-pane title="待结算" :pane-key="'pending'">
+          <nut-cell-group>
+            <nut-cell v-for="item in pendingProfitList" :key="item.id" class="profit-item">
+              <template #title>
+                <view class="profit-info">
+                  <text class="order-id">订单号：{{ item.orderId }}</text>
+                  <text class="profit-amount">+{{ item.amount }}元</text>
+                </view>
+              </template>
+              <template #desc>
+                <view class="profit-detail">
+                  <text class="time">{{ item.time }}</text>
+                  <text class="status">{{ item.status }}</text>
+                </view>
+              </template>
+            </nut-cell>
+          </nut-cell-group>
+        </nut-tab-pane>
+        <nut-tab-pane title="已结算" :pane-key="'settled'">
+          <nut-cell-group>
+            <nut-cell v-for="item in settledProfitList" :key="item.id" class="profit-item">
+              <template #title>
+                <view class="profit-info">
+                  <text class="order-id">订单号：{{ item.orderId }}</text>
+                  <text class="profit-amount">+{{ item.amount }}元</text>
+                </view>
+              </template>
+              <template #desc>
+                <view class="profit-detail">
+                  <text class="time">{{ item.time }}</text>
+                  <text class="status">{{ item.status }}</text>
+                </view>
+              </template>
+            </nut-cell>
+          </nut-cell-group>
+        </nut-tab-pane>
+      </nut-tabs>
     </view>
   </view>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import Taro from '@tarojs/taro';
 
 // 收益数据
 const totalProfit = ref('1280.00');
 const todayProfit = ref('128.00');
 const monthProfit = ref('680.00');
+
+// 当前选中的标签
+const activeTab = ref('all');
 
 // 收益明细列表
 const profitList = ref([
@@ -81,6 +124,15 @@ const profitList = ref([
     status: '待结算'
   }
 ]);
+
+// 根据状态筛选收益列表
+const filteredProfitList = computed(() => profitList.value);
+const pendingProfitList = computed(() => 
+  profitList.value.filter(item => item.status === '待结算')
+);
+const settledProfitList = computed(() => 
+  profitList.value.filter(item => item.status === '已结算')
+);
 
 // 处理提现
 const handleWithdraw = () => {
@@ -149,11 +201,10 @@ const handleWithdraw = () => {
   .profit-list {
     background-color: #fff;
     border-radius: 8px;
-    overflow: hidden;
+    padding: 16px;
 
     .list-header {
-      padding: 16px;
-      border-bottom: 1px solid #eee;
+      margin-bottom: 16px;
 
       .title {
         font-size: 16px;
@@ -183,6 +234,7 @@ const handleWithdraw = () => {
       .profit-detail {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin-top: 4px;
 
         .time {
