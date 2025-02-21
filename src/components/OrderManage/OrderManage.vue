@@ -14,6 +14,11 @@
       <nut-tab-pane title="退款/退货" value="退款中"/>
     </nut-tabs>
 
+    <!-- 收益按钮 -->
+    <view class="profit-button">
+      <nut-button type="primary" size="small" @click="navToProfit">查看收益</nut-button>
+    </view>
+
     <!-- 订单列表 -->
     <view v-for="order in filteredOrders" :key="order.id" class="order-item">
       <view class="order-info">
@@ -78,11 +83,22 @@ const search = () => {
 const handleTabChange = (value) => {
   orderStatus.value = value;
 };
+
+const navToProfit = () => {
+  Taro.navigateTo({
+    url: '/pages/profit/profit'
+  });
+};
 </script>
 
 <style lang="scss">
 .manage-view {
   padding: 16px;
+
+  .profit-button {
+    margin: 16px 0;
+    text-align: right;
+  }
 
   .order-item {
     margin: 16px 0;
