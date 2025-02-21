@@ -16,7 +16,9 @@ export default {
     'pages/returnGood/index',
     'pages/returnGood/returnForm',
     'pages/search/index',
-    'pages/payment/payment'
+    'pages/payment/payment',
+    'pages/profit/index',
+    'pages/profit/withdraw'
   ],
   window: {
     backgroundTextStyle: 'light',

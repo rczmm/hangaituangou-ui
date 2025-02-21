@@ -17,6 +17,7 @@ declare module 'vue' {
     NutCategory: typeof import('@nutui/nutui-taro')['Category']
     NutCategoryPane: typeof import('@nutui/nutui-taro')['CategoryPane']
     NutCell: typeof import('@nutui/nutui-taro')['Cell']
+    NutCellGroup: typeof import('@nutui/nutui-taro')['CellGroup']
     NutCollapse: typeof import('@nutui/nutui-taro')['Collapse']
     NutCollapseItem: typeof import('@nutui/nutui-taro')['CollapseItem']
     NutComment: typeof import('@nutui/nutui-taro')['Comment']
