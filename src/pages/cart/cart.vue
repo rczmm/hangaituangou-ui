@@ -92,7 +92,10 @@ const state = reactive<Item[]>([
 ])
 
 const pay = () => {
-  console.log(state)
+  const totalAmount = checkedPrice.value
+  Taro.navigateTo({
+    url: `/pages/payment/payment?amount=${totalAmount}`
+  })
 }
 
 // 计算属性 获取选中商品数量

@@ -149,7 +149,10 @@ const checkedPrice = computed(() => {
 })
 
 const pay = () => {
-  console.log(state)
+  const totalAmount = checkedPrice.value
+  Taro.navigateTo({
+    url: `/pages/payment/payment?amount=${totalAmount}`
+  })
 }
 
 onMounted(async () => {

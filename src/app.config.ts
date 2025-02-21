@@ -15,7 +15,8 @@ export default {
     'pages/orderDetail/orderDetail',
     'pages/returnGood/index',
     'pages/returnGood/returnForm',
-    'pages/search/index'
+    'pages/search/index',
+    'pages/payment/payment'
   ],
   window: {
     backgroundTextStyle: 'light',
