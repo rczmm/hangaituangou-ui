@@ -1,16 +1,23 @@
 .cart-container {
-  background-color: rgb(244, 248, 247);
+  background: linear-gradient(135deg, #fff5f7 0%, #e6f3ff 50%, #f8f4ff 100%);
 }
 
 .address-card {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   margin: 10px 20px;
-}
-
-.address-name,
-.person-info {
-  padding: 10px 20px;
+  border: 2px solid #ffd6e6;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.1);
+  position: relative;
+  .address-name,
+  .person-info {
+    display: flex;
+    align-items: center;
+  }
+  .person-name {
+    display: flex;
+    align-items: center;
+  }
   //background-color: #0077aa;
 }
 
@@ -24,11 +31,12 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #fff;
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
-  align-items: center; /* 垂直居中 */
-  padding: 10px 20px;
-  border-top: 1px solid #eee;
+  align-items: center;
+  padding: 15px 20px;
+  border-top: 2px solid #ffd6e6;
+  box-shadow: 0 -4px 12px rgba(255, 182, 193, 0.1);
 }
 
 .pay-info {
@@ -65,8 +73,56 @@
 
 .pay-info-right text:first-child {
   font-weight: bold;
+  color: #ff6b81;
+  font-size: 22px;
+}
+
+.title {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 20px;
+  color: #ff8da1;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.3);
+}
+
+.address-name, .person-name {
+  display: flex;
+  align-items: center;
+  
+  text {
+    color: #666;
+    font-size: 16px;
+  }
+}
+
+.address-details {
+  text {
+    color: #888;
+    font-size: 14px;
+  }
+  .address-tag {
+    
+    :deep(.nut-tag) {
+      background-color: #fff0f5 !important;
+      color: #ff8da1 !important;
+      border-color: #ffd6e6 !important;
+    }
+  }
 }
 
 .pay-btn {
-  margin-right: 40px; /* 与左侧内容区域间隔 */
+  margin-right: 40px;
+  background: linear-gradient(45deg, #ffa07a, #ff8c69) !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 8px 25px !important;
+  font-size: 16px !important;
+  box-shadow: 0 4px 12px rgba(255, 160, 122, 0.3) !important;
+  transition: transform 0.2s ease !important;
+  
+  &:active {
+    transform: scale(0.95) !important;
+  }
 }
