@@ -1,7 +1,6 @@
 <template>
 
   <view class="index-view">
-
     <view class="address-card">
       <view class="person-info">
         <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanzhuangshi"
@@ -17,8 +16,18 @@
     </view>
 
     <view class="rate-card">
-      <text>订单评价</text>
-      <nut-rate v-model="value" allow-half></nut-rate>
+      <view class="rate-content">
+        <text class="rate-label">订单评价</text>
+        <nut-rate 
+          v-model="value" 
+          allow-half 
+          class="rate-stars" 
+          active-color="#FFB800"
+          void-color="#E5E5E5"
+          size="20"
+          @change="handleRateChange"
+        ></nut-rate>
+      </view>
     </view>
 
     <view class="order-list">
@@ -48,6 +57,11 @@ import OrderCard from "../../components/OrderDetail/OrderCard.vue";
 
 const value = ref(3.5);
 
+const handleRateChange = (val: number) => {
+  console.log('当前评分：', val);
+  // 这里可以添加评分变化后的业务逻辑
+};
+
 const dataList = ref([
     {
       id: 1,
@@ -70,3 +84,27 @@ const dataList = ref([
 )
 
 </script>
+<style lang="scss">
+.rate-card {
+  background: #fff;
+  padding: 16px;
+  margin: 12px;
+  border-radius: 8px;
+  
+  .rate-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    .rate-label {
+      font-size: 14px;
+      color: #333;
+      min-width: 56px;
+    }
+    
+    .rate-stars {
+      flex: 1;
+    }
+  }
+}
+</style>

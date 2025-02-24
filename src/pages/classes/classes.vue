@@ -2,40 +2,25 @@
   <view class="classes-view">
     <!-- 横向滚动列表  -->
     <scroll-view :scroll-x="true" class="scroll-view" style="width: 100%">
-      <view
-        v-for="item in itemList"
-        :key="item.id"
-        class="scroll-item"
-        @click="getItemList(item)"
-      >
-        <icon-font
-          font-class-name="iconfont"
-          class-prefix="icon"
-          :name="item.icon"
-          :size="50"
-          color="green"
-        ></icon-font>
+      <view v-for="item in itemList" :key="item.id" class="scroll-item" @click="getItemList(item)">
+        <icon-font font-class-name="iconfont" class-prefix="icon" :name="item.icon" :size="50"
+          color="green"></icon-font>
         <text style="font-size: 15px;">{{ item.text }}</text>
       </view>
     </scroll-view>
 
     <nut-tabs v-model="value" auto-height type="smile" title-scroll direction="vertical">
-      <nut-tab-pane
-        v-for="item in items"
-        :key="item.key"
-        :title="item.title"
-        :pane-key="item.key"
-        :click="getStateList(item.title,item.category)"
-      >
+      <nut-tab-pane v-for="item in items" :key="item.key" :title="item.title" :pane-key="item.key"
+        :click="getStateList(item.title, item.category)">
         <view class="tab-content">
           <view v-if="value === item.key">
-            <view v-if="item.key==='1'">
+            <view v-if="item.key === '1'">
               <GoodCard :state="state"></GoodCard>
             </view>
-            <view v-else-if="item.key==='2'">
+            <view v-else-if="item.key === '2'">
               <GoodCard :state="state"></GoodCard>
             </view>
-            <view v-else-if="item.key==='3'">
+            <view v-else-if="item.key === '3'">
               <GoodCard :state="state"></GoodCard>
             </view>
           </view>
@@ -62,9 +47,9 @@
 </template>
 
 <script setup lang="ts">
-import {IconFont} from "@nutui/icons-vue";
+import { IconFont } from "@nutui/icons-vue";
 import './classes.scss'
-import {computed, onMounted, reactive, ref} from "vue";
+import { computed, onMounted, reactive, ref } from "vue";
 import Taro from "@tarojs/taro";
 import GoodCard from "../../components/GoodCard/GoodCard.vue";
 
@@ -77,19 +62,20 @@ interface Item {
 }
 
 const itemList = reactive<Item[]>([
-  {id: 1, icon: 'shengdanbingqilin', text: '蔬菜瓜果'},
-  {id: 2, icon: 'shengdanbingqilin', text: '新鲜水果'},
-  {id: 3, icon: 'shengdanbingqilin', text: '时令蔬菜'},
-  {id: 4, icon: 'shengdanbingqilin', text: '进口水果'},
-  {id: 5, icon: 'shengdanbingqilin', text: '叶菜类'},
-  {id: 6, icon: 'shengdanbingqilin', text: '根茎类'},
-  {id: 7, icon: 'shengdanbingqilin', text: '菌菇类'},
+  { id: 1, icon: 'shucai', text: '蔬菜瓜果' },
+  { id: 2, icon: 'shucai', text: '新鲜水果' },
+  { id: 3, icon: 'shucai', text: '时令蔬菜' },
+  { id: 4, icon: 'shucai', text: '进口水果' },
+  { id: 5, icon: 'shucai', text: '叶菜类' },
+  { id: 6, icon: 'shucai', text: '根茎类' },
+  { id: 7, icon: 'shucai', text: '菌菇类' },
 ]);
 
+
 const items = ref([
-  {key: '1', title: '绿叶菜', content: 'Content of Tab 1', category: '蔬菜瓜果'},
-  {key: '2', title: '土豆根茎', content: 'Content of Tab 1', category: '蔬菜瓜果'},
-  {key: '3', title: '我是水果', content: 'Content of Tab 1', category: '蔬菜瓜果'}
+  { key: '1', title: '绿叶菜', content: 'Content of Tab 1', category: '蔬菜瓜果' },
+  { key: '2', title: '土豆根茎', content: 'Content of Tab 1', category: '蔬菜瓜果' },
+  { key: '3', title: '我是水果', content: 'Content of Tab 1', category: '蔬菜瓜果' }
 ]);
 
 const state = ref([
@@ -150,9 +136,16 @@ const checkedPrice = computed(() => {
 
 const pay = () => {
   const totalAmount = checkedPrice.value
-  Taro.navigateTo({
-    url: `/pages/payment/payment?amount=${totalAmount}`
-  })
+  if (totalAmount > 0) {
+    Taro.navigateTo({
+      url: `/pages/payment/payment?amount=${totalAmount}`
+    })
+  } else {
+    Taro.showToast({
+      title: '请先选择商品',
+      icon: 'none'
+    })
+  }
 }
 
 onMounted(async () => {

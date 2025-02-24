@@ -1,77 +1,150 @@
 .classes-view {
-  height: 100%;
-}
+  background-color: #FFF5F5;
+  min-height: 100vh;
+  .scroll-view {
+    white-space: nowrap;
+    padding: 15px;
+    overflow-x: auto;
+    background: linear-gradient(to bottom, #E6E6FA, #FFF5F5);
+    border-bottom: 2px solid #FFE4E1;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+    .scroll-item {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: relative;
+      flex-shrink: 0;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        border: 1px solid #E6E6FA;
+        border-radius: 17px;
+        background: linear-gradient(45deg, transparent 10px, #FFF5F5 10px);
+        z-index: -1;
+      }
 
-.scroll-view {
-  white-space: nowrap; // 关键：使内容不换行，实现横向滚动
-  padding: 10px; // 可选：添加一些内边距
-  overflow-x: auto;
-}
+      &:active {
+        transform: scale(0.98);
+      }
 
-.scroll-item {
-  display: inline-flex; // 关键：使元素水平排列
-  flex-direction: column;
-  align-items: center; // 图标和文字垂直居中
-  margin-right: 20px;
-  flex-shrink: 0; // 防止item被压缩
-}
+      .icon-font {
+        background: linear-gradient(135deg, #FFB6C1, #E6E6FA);
+        border-radius: 50%;
+        padding: 10px;
+        margin-bottom: 8px;
+      }
 
-.scroll-view::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  display: none;
-}
+      text {
+        color: #666;
+        font-size: 14px;
+      }
+    }
+  }
+  .nut-tabs {
+    background-color: #fff;
+    margin-top: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    .nut-tabs__titles {
+      background: linear-gradient(to right, #FFE4E1, #E6E6FA);
+      border-radius: 15px 15px 0 0;
+      padding: 10px 0;
 
+      .nut-tabs__titles-item {
+        color: #666;
+        font-size: 14px;
+        position: relative;
+        
+        &::after {
+          content: '🎀';
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          font-size: 12px;
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
 
-.pay {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #fff;
-  display: flex;
-  align-items: center; /* 垂直居中 */
-  padding: 10px 20px;
-  border-top: 1px solid #eee;
-}
+        &.active {
+          color: #FF69B4;
+          font-weight: bold;
+          
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
 
-.pay-info {
-  display: flex; /* 使左侧内容区域也使用 Flexbox 布局 */
-  flex-direction: row; /* 设置主轴方向为水平 */
-  align-items: center; /* 垂直居中 */
-  flex: 1; /* 允许 pay-info 区域占据剩余空间 */
-}
+    .tab-content {
+      padding: 8px;
+    }
+  }
+  .pay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    border-top: 2px solid #FFE4E1;
 
-.pay-info-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* 垂直方向内容居中 */
-}
+    .pay-info {
+      display: flex;
+      gap: 20px;
 
-.pay-info-left text {
-  font-size: 20px;
-  color: #333;
-  margin: 2px 0; /* 上下间距 */
-}
+      &-left, &-right {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
 
-.pay-info-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* 右对齐 */
-  justify-content: center; /* 垂直方向内容居中 */
-}
+        text {
+          &:first-child {
+            color: #FF69B4;
+            font-weight: bold;
+          }
+          &:last-child {
+            color: #666;
+            font-size: 12px;
+          }
+        }
+      }
+    }
 
-.pay-info-right text {
-  font-size: 18px;
-  color: #333;
-  margin: 2px 0; /* 上下间距 */
-}
+    .pay-btn {
+      background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+      border: none;
+      border-radius: 20px;
+      padding: 8px 25px;
+      color: #fff;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(255,105,180,0.3);
+      transition: transform 0.2s;
 
-.pay-info-right text:first-child {
-  font-weight: bold;
-}
-
-.pay-btn {
-  margin-right: 40px; /* 与左侧内容区域间隔 */
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
 }
 
 

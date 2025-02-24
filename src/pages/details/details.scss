@@ -1,44 +1,183 @@
+// 定义主题色变量
+$primary-pink: #ffd6e7;
+$primary-blue: #bde0fe;
+$primary-cream: #f8f4e9;
+$primary-lavender: #e2d4f3;
+$accent-yellow: #ffeb99;
+$accent-coral: #ff9a8c;
+
 .details {
-  background-color: rgb(244, 248, 247);
-  width: 100%;
+  background-color: #fff5f5;
+  width: auto;
+  padding: 0 15px;
 }
 
 .swiper_view {
   height: 40%;
-  background-color: red;
+  background-color: #fff;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 8px rgba(255, 192, 203, 0.2);
 }
 
 .product_guide {
-  width: 95%;
-  margin: 10px auto;
-  background-color: rgb(255, 255, 255);
+  width: 100%;
+  margin: 15px auto;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(255, 192, 203, 0.15);
+  padding: 20px;
+  position: relative;
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: repeating-linear-gradient(-45deg,
+      $primary-pink 0px,
+      $primary-pink 5px,
+      transparent 5px,
+      transparent 10px
+    );
+  }
+  
+  &::before {
+    top: -5px;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  &::after {
+    bottom: -5px;
+    border-radius: 0 0 15px 15px;
+  }
 }
 
 .card-comment {
-  border-radius: 25px;
-  width: 95%;
+  border-radius: 15px;
+  width: 100%;
   margin: 30px auto;
-  padding: 10px;
-  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(255, 192, 203, 0.15);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 16px;
+    background: 
+      radial-gradient(circle at 10px 8px, $primary-pink 2px, transparent 2px) repeat-x,
+      radial-gradient(circle at 10px 8px, $primary-cream 4px, transparent 4px) repeat-x;
+    background-size: 20px 16px;
+    background-position: 0 0, 0 0;
+  }
 }
 
 .product_details_card {
-  width: 95%;
-  height: 300px;
-  border-radius: 25px;
-  background-color: rgb(255, 255, 255);
-  margin: 10px auto;
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  padding: 25px;
+  margin: 20px auto;
+  border: 2px solid $primary-pink;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 20px;
+    background: $primary-pink;
+    border-radius: 10px;
+  }
 }
 
 .product_price {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 40px;
-  color: red;
+  margin: 15px 0;
+
+  text {
+    background: linear-gradient(45deg, $accent-coral, $primary-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+    font-weight: bold;
+
+    &.member-price {
+      font-size: 16px;
+      color: $primary-lavender;
+      background: none;
+      -webkit-text-fill-color: $primary-lavender;
+      position: relative;
+      margin-left: 15px;
+
+      &::before {
+        content: '✨';
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.product_tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+
+  :deep(.nut-tag) {
+    background-color: $primary-cream;
+    color: $accent-coral;
+    border: 1px dashed $primary-pink;
+    padding: 8px 15px;
+
+    &::before {
+      content: '♥';
+      margin-right: 5px;
+    }
+  }
+}
+
+.member-price {
+  font-size: 14px;
+  color: #ff9eb6;
+  margin-left: 10px;
+}
+
+.product_name {
+  font-size: 20px;
+  color: #333;
+  margin: 10px 0;
+  font-weight: 500;
 }
 
 .product_desc {
-  font-size: 20px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.product_tag {
+  margin: 10px 0;
+  display: flex;
+  gap: 8px;
+}
+
+.product_position,
+.product_time {
+  font-size: 14px;
+  color: #666;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
 }
 
 .guide_step {
@@ -48,9 +187,104 @@
 .buy_view {
   position: fixed;
   bottom: 0;
-  left: 0; // 通常需要设置 left: 0 和 width: 100% 以占据整个底部宽度
+  left: 0;
   width: 100%;
-  height: 100px; // 设置底部 view 的高度
-  background-color: #f0f0f0; // 设置背景色
-  z-index: 999; // 可选，设置 z-index 以确保在其他元素之上
+  padding: 10px 15px;
+  background-color: #fff;
+  box-shadow: 0 -2px 10px rgba(255, 192, 203, 0.15);
+  z-index: 999;
+  border-radius: 20px 20px 0 0;
+}
+
+.product_guide {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid $primary-blue;
+
+  >text {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+
+    &::before,
+    &::after {
+      content: '✿';
+      color: $primary-pink;
+      margin: 0 8px;
+    }
+  }
+
+  :deep(.guide_step) {
+    margin: 20px auto;
+    z-index: 1;
+
+    .nut-step {
+      .nut-step__title {
+        color: $accent-coral;
+      }
+
+      .nut-step__content {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.6;
+        background-color: rgba($primary-lavender, 0.1);
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+.card-comment {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: repeating-linear-gradient(-45deg,
+        $primary-pink,
+        $primary-pink 10px,
+        $primary-cream 10px,
+        $primary-cream 20px);
+    border-radius: 0 0 20px 20px;
+    margin-top: 20px;
+  }
+}
+
+.buy_view {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #f0f0f0;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+
+  :deep(.nut-cell) {
+    background-color: $accent-yellow;
+    border-radius: 25px;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    .nut-cell__title {
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      flex: 1;
+    }
+  }
 }

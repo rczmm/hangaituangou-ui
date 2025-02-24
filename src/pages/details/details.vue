@@ -15,6 +15,7 @@
       <!--      商品价格-->
       <view class="product_price">
         <text>￥{{ product.price }}</text>
+        <text class="member-price">会员价 ￥{{ Math.floor(product.price * 0.9) }}</text>
       </view>
       <!-- 商品名称     -->
       <view class="product_name">
@@ -86,7 +87,7 @@
 
     <view class="buy_view">
       <!-- 商品规格选择   -->
-      <nut-cell :title="`立马下单`" desc="" @click="base = true"></nut-cell>
+      <nut-cell :title="`加入购物车`" desc="" @click="base = true"></nut-cell>
       <nut-sku
         v-model:visible="base"
         :sku="data.sku"
