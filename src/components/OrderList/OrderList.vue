@@ -15,7 +15,7 @@
 
       <view class="orderItem-body">
         <scroll-view class="orderItem-body-scroll" :scroll-x="true">
-          <image v-for="image in item.images" :src="image" class="orderItem-body-scroll-image"/>
+          <image v-for="image in item.images" :key="image" :src="image" class="orderItem-body-scroll-image"/>
         </scroll-view>
         <view class="orderItem-body-info">
           共{{ item.num }}件
@@ -154,7 +154,7 @@ const shareToWechat = (type: 'friend' | 'timeline') => {
   } else {
     Taro.shareTimeline(shareData);
   }
-  
+
   closeShare();
 };
 
@@ -199,7 +199,7 @@ const navToOrderDetail = (orderId: number) => {
       display: flex;
       flex-direction: column;
       align-items: center;
-      
+
       text {
         margin-top: 8px;
         font-size: 14px;

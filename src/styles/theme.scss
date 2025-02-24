@@ -1,0 +1,111 @@
+:root {
+  /* 主题色彩 */
+  --primary-color: #ffc0cb; /* 樱花粉 */
+  --secondary-color: #e6e6fa; /* 淡紫色 */
+  --accent-color: #98ff98; /* 薄荷绿 */
+  --background-color: #fff5f5; /* 奶白色背景 */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #ffd1dc;
+  --gold-accent: #ffd700;
+  --yellow-light: #fff8dc;
+  
+  /* 渐变色 */
+  --gradient-primary: linear-gradient(135deg, #ffc0cb 0%, #e6e6fa 100%);
+  --gradient-secondary: linear-gradient(135deg, #e6e6fa 0%, #98ff98 100%);
+  
+  /* 阴影效果 */
+  --shadow-sm: 0 2px 4px rgba(255, 192, 203, 0.1);
+  --shadow-md: 0 4px 6px rgba(255, 192, 203, 0.15);
+  --shadow-lg: 0 8px 12px rgba(255, 192, 203, 0.2);
+  
+  /* 圆角 */
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-full: 9999px;
+}
+
+/* 全局基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 标题字体 */
+.title {
+  font-family: "YouYuan", "STHupo", sans-serif;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+/* 正文字体 */
+body {
+  font-family: "Source Han Sans CN", "Microsoft YaHei", sans-serif;
+  color: var(--text-secondary);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* 按钮基础样式 */
+.btn {
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: var(--border-radius-md);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+/* 卡片基础样式 */
+.card {
+  background: white;
+  border-radius: var(--border-radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+/* 输入框基础样式 */
+.input {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 8px 12px;
+  font-size: 14px;
+  
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* 装饰元素 */
+.decoration {
+  position: relative;
+  
+  &::before {
+    content: "✿";
+    color: var(--primary-color);
+    position: absolute;
+    opacity: 0.5;
+  }
+}
+
+/* 动画效果 */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.float {
+  animation: float 2s ease-in-out infinite;
+}
