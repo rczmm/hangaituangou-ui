@@ -1,19 +1,64 @@
 .my-index {
-  min-height: 100vh;
+  padding: 0 16px;
   background-color: #f7f8fa;
-  padding-bottom: 20px;
+  min-height: 100vh;
+  width: auto;
+
+  .avatar-view {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nut-divider {
+    margin: 16px 0;
+    opacity: 0.6;
+  }
+
+  .nut-grid {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 16px 0;
+    margin-bottom: 16px;
+
+    .nut-grid-item {
+      .icon {
+        margin-bottom: 8px;
+      }
+      &__text {
+        font-size: 14px;
+        color: #333;
+      }
+    }
+  }
+
+  .nut-tabs {
+    margin-top: 16px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 12px;
+
+    .tab-content {
+      padding: 12px 0;
+    }
+  }
+
+  .nut-fixed-nav {
+    z-index: 999;
+  }
 }
 
 .avatar-view {
-  width: 100%;
+  width: 90%;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+  background: linear-gradient(135deg, #E6E6FA, #FFB6C1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(230, 182, 193, 0.2);
 
   &::after {
     content: '';
@@ -22,7 +67,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     transform: rotate(45deg);
   }
 }
@@ -32,10 +77,10 @@
   height: 100px;
   background-color: #fff;
   border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.25);
   font-size: 36px;
-  color: #ff6b6b;
+  color: #FFB6C1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,33 +94,34 @@
 
 :deep(.nut-grid) {
   background-color: #fff;
-  margin: 12px 0;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 12px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(230, 230, 250, 0.1);
 
   .nut-grid-item {
     padding: 16px 8px;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
 
     &:active {
-      background-color: #f5f5f5;
+      background-color: #FFF0F5;
     }
 
     .icon-font {
       margin-bottom: 8px;
+      color: #FFB6C1;
     }
 
     &__text {
       font-size: 14px;
-      color: #333;
+      color: #666;
     }
   }
 }
 
 .nut-divider {
   margin: 20px 0;
-  color: #666;
-  font-size: 16px;
+  color: #999;
+  font-size: 14px;
 }
 
 .tab-content {
@@ -90,12 +136,12 @@
 
 :deep(.nut-tabs) {
   background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(230, 230, 250, 0.1);
   margin: 12px;
 
   .nut-tabs__titles {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #FFE4E1;
   }
 
   .nut-tabs__titles-item {
@@ -103,7 +149,7 @@
     color: #666;
 
     &.active {
-      color: #ff6b6b;
+      color: #FFB6C1;
       font-weight: bold;
     }
   }
@@ -113,7 +159,57 @@
   .nut-fixed-nav__list {
     background-color: #fff;
     border-radius: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(255, 182, 193, 0.15);
+    padding: 8px;
+
+    &-item {
+      margin: 4px 0;
+      transition: transform 0.2s;
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}
+.my-index {
+  width: auto;
+  height: 100%;
+  background-color: #f5f5f5;
+
+  .avatar-view {
+    width: auto;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+  }
+
+  .avatar-index {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+  }
+
+  .nut-grid {
+    background-color: #fff;
+  }
+
+  .nut-grid-item {
+    background-color: #fff;
+  }
+
+  .tab-content {
+    background-color: #fff;
+  }
+}
+
+:deep(.nut-fixed-nav) {
+  .nut-fixed-nav__list {
+    background-color: #fff;
+    border-radius: 24px;
+    box-shadow: 0 4px 12px rgba(255, 182, 193, 0.15);
     padding: 8px;
 
     &-item {

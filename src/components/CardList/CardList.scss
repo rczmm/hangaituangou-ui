@@ -6,29 +6,58 @@
 .cardList-item{
   margin: 10px 20px;
   border-radius: 20px;
-  background-color: red;
+  background-color: #FFF;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(219, 112, 147, 0.08);
+  border: 1px solid rgba(230, 230, 250, 0.5);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(219, 112, 147, 0.12);
+  }
 }
 
 .card-item {
-  background-color: rgb(255, 255, 255);
+  background-color: #FFF;
+  padding: 15px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #FFB6C1, transparent);
+    border-radius: 0 0 0 20px;
+    opacity: 0.5;
+  }
 }
 
-
 .card-tag-list {
-  margin-top: 10rpx;
-  height: 15px;
+  margin-top: 10px;
+  height: 20px;
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .card-tag-list > .tag {
-  float: left;
-  padding: 0 5px;
-  border-radius: 1px;
-  font-size: 10px;
-  height: 15px;
-  line-height: 15px;
-  color: #999;
-  background-color: rgb(255, 255, 255);
-  margin-right: 20px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  height: 20px;
+  line-height: 16px;
+  color: #DDA0DD;
+  background-color: #FFF0F5;
+  border: 1px solid rgba(219, 112, 147, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #FFE4E1;
+    transform: scale(1.05);
+  }
 }

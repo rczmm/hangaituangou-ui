@@ -14,24 +14,24 @@
 
     <nut-grid :column-num="5">
       <nut-grid-item text="待支付" @click="navToOrder(1)">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                   :size="25" color="red"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="dingdan-quanbudingdan"
+                   :size="25" color="#FF9F7F"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="待取货" @click="navToOrder(2)">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                   :size="25" color="red"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="daiquhuodingdan"
+                   :size="25" color="#B5D8F0"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="待评价" @click="navToOrder(3)">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                   :size="25" color="red"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="dingdan-quanbudingdan"
+                   :size="25" color="#E6A4E2"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="全部订单" @click="navToOrder(4)">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                   :size="25" color="red"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="dingdan-quanbudingdan"
+                   :size="25" color="#AEC6CF"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="退款|售后" @click="navToOrder(5)">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                   :size="25" color="red"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="dingdan-quanbudingdan"
+                   :size="25" color="#FFB5B5"></icon-font>
       </nut-grid-item>
     </nut-grid>
 
@@ -39,20 +39,20 @@
 
     <nut-grid :column-num="5">
       <nut-grid-item text="天天抽奖" @click="navToDraw">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                   :size="25" color="red"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="choujiang"
+                   :size="25" color="#FFD700"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="成为团长" @click="navToReport">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                   :size="25" color="red"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="wode"
+                   :size="25" color="#98FB98"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="意见反馈" @click="navToFeedBack">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                   :size="25" color="red"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="wode"
+                   :size="25" color="#87CEEB"></icon-font>
       </nut-grid-item>
       <nut-grid-item text="我是团长" @click="navToManage">
-        <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
-                   :size="25" color="red"></icon-font>
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="wode"
+                   :size="25" color="#DDA0DD"></icon-font>
       </nut-grid-item>
     </nut-grid>
 
@@ -138,8 +138,8 @@ const itemList = reactive<Item[]>([
 ]);
 
 const items = ref([
-  {key: '1', title: 'Tab 1', content: 'Content of Tab 1', category: '蔬菜瓜果'},
-  {key: '2', title: 'Tab 1', content: 'Content of Tab 1', category: '蔬菜瓜果'}
+  {key: '1', title: '最新', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: '2', title: '最热', content: 'Content of Tab 1', category: '蔬菜瓜果'}
 ]);
 
 const state = ref([

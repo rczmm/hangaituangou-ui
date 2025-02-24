@@ -19,6 +19,7 @@
       :rows="4"
       :top="20"
       :speeds="7000"
+      style="width: 90%; margin: 0 auto; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); overflow: hidden;"
     >
       <nut-swiper-item v-for="(item, index) in swiperList" :key="index" style="height: 150px">
         <img :src="item" alt="" style="height: 100%; width: 100%" draggable="false"/>
@@ -26,47 +27,64 @@
     </nut-swiper>
 
     <view class="back-view">
-      <nut-divider :style="{ color: '#fa1a07', borderColor: '#f8d5d2', padding: '0 16px' }"> 最新评论</nut-divider>
+      <nut-divider :style="{ color: '#FFB6C1', borderColor: '#FFB6C1', padding: '0 12px', margin: '15px 0' }"> 最新评论</nut-divider>
 
       <!-- 弹幕区域  -->
       <view style="position: relative; height: 150px" class="danmu-view">
-        <nut-barrage class="barrage-item" ref="barrageRef" :danmu="list"></nut-barrage>
+        <nut-barrage 
+          class="barrage-item" 
+          ref="barrageRef" 
+          :danmu="list"
+          :style="{
+            '--nutui-barrage-font-size': '16px',
+            '--nutui-barrage-font-weight': '500',
+            '--nutui-barrage-font-family': 'Arial, sans-serif',
+            '--nutui-barrage-item-background': 'rgba(255, 182, 193, 0.2)',
+            '--nutui-barrage-item-padding': '6px 12px',
+            '--nutui-barrage-item-border-radius': '20px',
+            '--nutui-barrage-z-index': '100',
+            '--nutui-barrage-animation-duration': '8s',
+            '--nutui-barrage-lane-height': '36px',
+            '--nutui-barrage-item-color': 'linear-gradient(to right, #FF69B4, #FFB6C1)',
+            '--nutui-barrage-item-shadow': '0 2px 4px rgba(0, 0, 0, 0.1)'
+          }"
+        ></nut-barrage>
       </view>
 
       <!-- 栅栏布局   -->
       <view class="grid-view">
         <nut-grid class="grid-card">
           <nut-grid-item text="蔬菜豆品" @click="navToCate" class="grid-item">
-            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanbingqilin"
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shucai"
                        :size="25" color="green"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="水果鲜花" @click="navToCate">
-            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanguo"
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shuiguopingguo"
                        :size="25" color="pink"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="休闲零食" @click="navToCate">
-            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanwanou"
-                       :size="25" color="red"></icon-font>
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="lingshi"
+             :size="25" color="#FF69B4"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="粮油调味" @click="navToCate">
-            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanlaorenmao"
-                       :size="25" color="red"></icon-font>
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="a-tiaoliaotiaoweipin"
+             :size="25" color="#FFB6C1"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="酒水饮料" @click="navToCate">
-            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
-                       :size="25" color="red"></icon-font>
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shipinyinliao"
+             :size="25" color="#DB7093"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="肉蛋水产" @click="navToCate">
-            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanwazi"
-                       :size="25" color="red"></icon-font>
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengxian-roulei"
+             :size="25" color="#FF69B4"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="个护清洁" @click="navToCate">
-            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanzhuangshi"
-                       :size="25" color="red"></icon-font>
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="gehu"
+             :size="25" color="#FFB6C1"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="日用百货" @click="navToCate">
-            <icon-font font-class-name="iconfont" class-prefix="icon" name="shengdanshu"
-                       :size="25" color="red"></icon-font>
+            <icon-font font-class-name="iconfont" class-prefix="icon" name="daily-necessities"
+             :size="25" color="#DB7093"></icon-font>
           </nut-grid-item>
         </nut-grid>
       </view>
@@ -75,39 +93,38 @@
     <!--标签区域-->
     <view class="scroll-view">
       <view class="scroll-item">
-        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
-                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="choujiang"
+                  :size="25" color="#FF69B4" class="scroll-icon"></IconFont>
         <text class="scroll-text"> 天天抽奖</text>
       </view>
       <view class="scroll-item">
-        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
-                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="qiandao"
+                  :size="25" color="#FFB6C1" class="scroll-icon"></IconFont>
         <text class="scroll-text"> 签到领鸡蛋</text>
       </view>
       <view class="scroll-item">
-        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
-                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="fenlei"
+                  :size="25" color="#DB7093" class="scroll-icon"></IconFont>
         <text class="scroll-text"> 领卷立减</text>
       </view>
       <view class="scroll-item">
-        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
-                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="shouye_o"
+                  :size="25" color="#FF69B4" class="scroll-icon"></IconFont>
         <text class="scroll-text"> 团购厨神</text>
       </view>
       <view class="scroll-item">
-        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
-                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="gouwuche"
+                  :size="25" color="#FFB6C1" class="scroll-icon"></IconFont>
         <text class="scroll-text"> 今天吃什么</text>
       </view>
       <view class="scroll-item">
-        <IconFont font-class-name="iconfont" class-prefix="icon" name="shengdanqiqiu"
-                  :size="25" color="red" class="scroll-icon"></IconFont>
+        <IconFont font-class-name="iconfont" class-prefix="icon" name="wode"
+                  :size="25" color="#DB7093" class="scroll-icon"></IconFont>
         <text class="scroll-text"> 生鲜答题</text>
       </view>
     </view>
 
-    <nut-divider :style="{ color: '#fa1a07', borderColor: '#f8d5d2', padding: '0 16px' }"> 最新上架</nut-divider>
-
+    <nut-divider :style="{ color: '#FFB6C1', borderColor: '#FFB6C1', padding: '0 12px', margin: '15px 0' }"> 最新上架</nut-divider>
     <!-- 列表  -->
     <scroll-view
       :scroll-y="true"
