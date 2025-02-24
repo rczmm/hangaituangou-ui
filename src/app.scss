@@ -1,1 +1,66 @@
 @import './styles/global.scss';
+@import './styles/theme.scss';
+
+/* 全局动画效果 */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+/* 全局按钮动画 */
+button {
+  transition: transform 0.2s ease;
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+/* 全局加载动画 */
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  
+  &::before {
+    content: "✿";
+    display: block;
+    font-size: 24px;
+    color: var(--primary-color);
+    animation: spin 2s linear infinite;
+  }
+  
+  &::after {
+    content: "正在为你准备哦~";
+    display: block;
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 全局提示框样式 */
+.toast {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--border-radius-full);
+  box-shadow: var(--shadow-md);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation: float 2s ease-in-out infinite;
+}
