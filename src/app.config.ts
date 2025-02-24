@@ -20,7 +20,8 @@ export default {
     'pages/profit/index',
     'pages/profit/withdraw',
     'pages/profit/profit',
-    'pages/OrderManage/OrderManage'
+    'pages/OrderManage/OrderManage',
+    'pages/review/review'
   ],
   window: {
     backgroundTextStyle: 'light',
