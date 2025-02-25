@@ -8,7 +8,7 @@
 
     <!-- 通知栏   -->
     <nut-noticebar class="notice-card" :text="text" close-mode scrollable/>
-
+    
     <!--  轮播图 -->
     <nut-swiper
       :auto-play="3000"

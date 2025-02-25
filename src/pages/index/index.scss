@@ -31,9 +31,29 @@
   box-shadow: 0 3px 15px rgba(255, 182, 193, 0.12);
   width: 90%;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 182, 193, 0.1);
   position: relative;
+  border: 5px solid #FFB6C1;
+  /*  先设置一个基础的边框 */
+  overflow: hidden;
+  /*  重要： 隐藏超出边框的伪元素部分，可选，取决于你的设计 */
+
+  &::before {
+    content: "🌟";
+    display: block;
+    position: absolute;
+    color: #FFD700;
+    font-size: 1.2em;
+    top: 0.5em; /* 稍微向下偏移 */
+  left: 25px; /* 稍微向右偏移 */
+    opacity: 0.7;
+
+  }
+
+  &::after {
+    content: "🌟";
+  }
 }
+
 
 .back-view:hover {
   box-shadow: 0 5px 20px rgba(255, 182, 193, 0.2);
