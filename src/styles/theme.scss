@@ -86,20 +86,87 @@ body {
     box-shadow: var(--shadow-sm);
   }
 }
-
-/* 装饰元素 */
-.decoration {
-  position: relative;
-  
+/* 装饰元素样式 */
+.decoration-flower {
   &::before {
-    content: "✿";
-    color: var(--primary-color);
-    position: absolute;
-    opacity: 0.5;
+    content: "🌸";
+    font-size: 1.2em;
+    margin-right: 4px;
   }
 }
 
-/* 动画效果 */
+.decoration-heart {
+  &::before {
+    content: "💖";
+    font-size: 1.2em;
+    margin-right: 4px;
+  }
+}
+
+/* 卡片悬浮效果 */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* 按钮动画效果 */
+.btn {
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+  
+  &:hover::after {
+    transform: translateX(100%);
+  }
+}
+
+/* 输入框焦点动画 */
+.input {
+  transition: all 0.3s ease;
+  
+  &:focus {
+    transform: scale(1.02);
+  }
+}
+
+/* 标题装饰 */
+.title {
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-5px); }

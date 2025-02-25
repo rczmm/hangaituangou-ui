@@ -83,8 +83,6 @@
         @clickImages="clickImages"
       ></nut-comment>
     </view>
-
-
     <view class="buy_view">
       <!-- 商品规格选择   -->
       <nut-cell :title="`加入购物车`" desc="" @click="base = true"></nut-cell>
@@ -99,8 +97,6 @@
       >
       </nut-sku>
     </view>
-
-
   </view>
 </template>
 

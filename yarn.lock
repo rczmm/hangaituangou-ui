@@ -1560,7 +1560,7 @@
     "@tarojs/binding-linux-x64-gnu" "4.0.9"
     "@tarojs/binding-win32-x64-msvc" "4.0.9"
 
-"@tarojs/cli@4.0.9":
+"@tarojs/cli@^4.0.9":
   version "4.0.9"
   resolved "https://registry.yarnpkg.com/@tarojs/cli/-/cli-4.0.9.tgz#fdb26bc016660e8c4e8bce2e2de2662639c7090e"
   integrity sha512-AsJmxyNg+xdiJiFEqjwtncUsCZL8dJa/0hhmUO8uhyDKXheg4v6OwAWlwagj0tJhMC0TaVglp6CH8DlTUlfH0A==

@@ -31,22 +31,30 @@ export default {
   },
   tabBar: {
     color: '#666',
-    selectedColor: '#1aad19',
+    selectedColor: '#ffd6e7',
     backgroundColor: '#fafafa',
     borderStyle: 'white',
     list: [
       {
         pagePath: 'pages/index/index',
-        text: '首页'
-      }, {
-        pagePath: 'pages/my/my',
-        text: '我的'
+        text: '首页',
+        iconPath: './assests/tabbar/home.png',
+        selectedIconPath: './assests/tabbar/home-active.png'
       }, {
         pagePath: 'pages/category/category',
-        text: '分类'
+        text: '分类',
+        iconPath: './assests/tabbar/category.png',
+        selectedIconPath: './assests/tabbar/category-active.png'
       }, {
         pagePath: 'pages/cart/cart',
-        text: '购物车'
+        text: '购物车',
+        iconPath: './assests/tabbar/cart.png',
+        selectedIconPath: './assests/tabbar/cart-active.png'
+      }, {
+        pagePath: 'pages/my/my',
+        text: '我的',
+        iconPath: './assests/tabbar/user.png',
+        selectedIconPath: './assests/tabbar/user-active.png'
       }
     ]
   }

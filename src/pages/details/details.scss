@@ -10,17 +10,31 @@ $accent-coral: #ff9a8c;
   background-color: #fff5f5;
   width: auto;
   padding: 0 15px;
+  padding-bottom: 120px; /* 为底部操作栏预留空间 */
 }
 
 .swiper_view {
-  height: 40%;
+  height: 25%;
+  margin: 15px;
   background-color: #fff;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 4px 8px rgba(255, 192, 203, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-2px);
+  }
+  :deep(.nut-swiper-item) {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
 }
-
 .product_guide {
-  width: 100%;
+  width: auto;
   margin: 15px auto;
   background-color: #fff;
   border-radius: 15px;
@@ -56,13 +70,13 @@ $accent-coral: #ff9a8c;
 
 .card-comment {
   border-radius: 15px;
-  width: 100%;
+  width: auto;
   margin: 30px auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(255, 192, 203, 0.15);
   position: relative;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -266,10 +280,13 @@ $accent-coral: #ff9a8c;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
-  background-color: #f0f0f0;
+  height: 80px; /* 减小高度 */
+  background-color: #fff;
   z-index: 1000;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 6px rgba(255, 192, 203, 0.15); /* 统一阴影风格 */
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
 
   :deep(.nut-cell) {
     background-color: $accent-yellow;
