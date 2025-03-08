@@ -3,12 +3,12 @@
 
     <!-- 搜索框   -->
     <nut-searchbar v-model="val" @search="navToSearch(val)">
-      <template #leftout> 涵盖团购</template>
+      <template #leftout> 小涵精选</template>
     </nut-searchbar>
 
     <!-- 通知栏   -->
     <nut-noticebar class="notice-card" :text="text" close-mode scrollable/>
-    
+
     <!--  轮播图 -->
     <nut-swiper
       :auto-play="3000"
@@ -31,9 +31,9 @@
 
       <!-- 弹幕区域  -->
       <view style="position: relative; height: 150px" class="danmu-view">
-        <nut-barrage 
-          class="barrage-item" 
-          ref="barrageRef" 
+        <nut-barrage
+          class="barrage-item"
+          ref="barrageRef"
           :danmu="list"
           :style="{
             '--nutui-barrage-font-size': '16px',
@@ -144,7 +144,7 @@ import './index.scss';
 import CardList from "../../components/CardList/CardList.vue";
 import Taro from '@tarojs/taro';
 
-const text = ref('欢迎来到涵盖团购！')
+const text = ref('欢迎来到小涵精选！')
 
 const barrageRef = ref()
 const list = ref([
@@ -194,9 +194,9 @@ const navToSearch = (val: string) => {
 
 
 const swiperList = ref([
-  'https://img.alicdn.com/imgextra/i3/O1CN017Z2XUL1nnQ94i2MTP_!!6000000005134-0-tps-846-472.jpg',
-  'https://img.alicdn.com/imgextra/i1/O1CN01YGUXOM1k5VKBPo5J3_!!6000000004632-2-tps-846-472.png',
-  'https://img.alicdn.com/imgextra/i3/O1CN01Sf6dER1zbJ3uVQ0lE_!!6000000006732-0-tps-846-472.jpg'
+  'https://i0.hdslb.com/bfs/live/new_room_cover/a0f5179c536e8f34dba2de6d39479dd582bd991e.jpg',
+  'https://i0.hdslb.com/bfs/live/new_room_cover/f72740ffd03d3e8b958bcd64ce6224ffa74d3b34.jpg',
+  'https://i0.hdslb.com/bfs/archive/e6972619dfa21efefd3e3d329410ce2f3f60df51.jpg'
 ])
 
 const state = ref(
