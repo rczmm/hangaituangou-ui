@@ -27,7 +27,9 @@
     </nut-swiper>
 
     <view class="back-view">
-      <nut-divider :style="{ color: '#FFB6C1', borderColor: '#FFB6C1', padding: '0 12px', margin: '15px 0' }"> 最新评论</nut-divider>
+      <nut-divider :style="{ color: '#FFB6C1', borderColor: '#FFB6C1', padding: '0 12px', margin: '15px 0' }">
+        最新评论
+      </nut-divider>
 
       <!-- 弹幕区域  -->
       <view style="position: relative; height: 150px" class="danmu-view">
@@ -64,27 +66,27 @@
           </nut-grid-item>
           <nut-grid-item text="休闲零食" @click="navToCate">
             <icon-font font-class-name="iconfont" class-prefix="icon" name="lingshi"
-             :size="25" color="#FF69B4"></icon-font>
+                       :size="25" color="#FF69B4"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="粮油调味" @click="navToCate">
             <icon-font font-class-name="iconfont" class-prefix="icon" name="a-tiaoliaotiaoweipin"
-             :size="25" color="#FFB6C1"></icon-font>
+                       :size="25" color="#FFB6C1"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="酒水饮料" @click="navToCate">
             <icon-font font-class-name="iconfont" class-prefix="icon" name="shipinyinliao"
-             :size="25" color="#DB7093"></icon-font>
+                       :size="25" color="#DB7093"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="肉蛋水产" @click="navToCate">
             <icon-font font-class-name="iconfont" class-prefix="icon" name="shengxian-roulei"
-             :size="25" color="#FF69B4"></icon-font>
+                       :size="25" color="#FF69B4"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="个护清洁" @click="navToCate">
             <icon-font font-class-name="iconfont" class-prefix="icon" name="gehu"
-             :size="25" color="#FFB6C1"></icon-font>
+                       :size="25" color="#FFB6C1"></icon-font>
           </nut-grid-item>
           <nut-grid-item text="日用百货" @click="navToCate">
             <icon-font font-class-name="iconfont" class-prefix="icon" name="daily-necessities"
-             :size="25" color="#DB7093"></icon-font>
+                       :size="25" color="#DB7093"></icon-font>
           </nut-grid-item>
         </nut-grid>
       </view>
@@ -124,7 +126,8 @@
       </view>
     </view>
 
-    <nut-divider :style="{ color: '#FFB6C1', borderColor: '#FFB6C1', padding: '0 12px', margin: '15px 0' }"> 最新上架</nut-divider>
+    <nut-divider :style="{ color: '#FFB6C1', borderColor: '#FFB6C1', padding: '0 12px', margin: '15px 0' }"> 最新上架
+    </nut-divider>
     <!-- 列表  -->
     <scroll-view
       :scroll-y="true"
@@ -194,26 +197,27 @@ const navToSearch = (val: string) => {
 
 
 const swiperList = ref([
-  'https://i0.hdslb.com/bfs/live/new_room_cover/a0f5179c536e8f34dba2de6d39479dd582bd991e.jpg',
+  'https://i0.hdslb.com/bfs/archive/605754231f167116b6cb1f9ebd1cd69068918a96.jpg',
   'https://i0.hdslb.com/bfs/live/new_room_cover/f72740ffd03d3e8b958bcd64ce6224ffa74d3b34.jpg',
-  'https://i0.hdslb.com/bfs/archive/e6972619dfa21efefd3e3d329410ce2f3f60df51.jpg'
+  'https://i1.hdslb.com/bfs/archive/7d6be67f722b8c8a5776aaef81d8259e47d6eb84.jpg',
+  'https://i0.hdslb.com/bfs/archive/d50d4f7af1f5cc8ec09f094a84b3e7ae5dacd9d0.jpg',
+  'https://i1.hdslb.com/bfs/archive/ded71849c2a7d76e7a015794838efe5b6b040fd6.jpg'
 ])
 
-const state = ref(
-  [
-    {
-      id: 1,
-      imgUrl:
-        '//gw.alicdn.com/bao/uploaded/i3/1624565934/O1CN01RTTRFy1thoztFTvWl_!!0-item_pic.jpg_300x300q90.jpg',
-      title: '法式复古玫瑰ins少女心床裙款田园风小碎花床上四件套全棉纯棉1.5',
-      price: '258',
-      vipPrice: '378',
-      shopDesc: '自营',
-      delivery: '厂商配送',
-      shopName: '阳澄湖大闸蟹自营店>',
-      tags: ['生鲜', '热销', '大卖']
-    }
-    , {
+const state = ref([
+  {
+    id: 1,
+    imgUrl:
+      '//gw.alicdn.com/bao/uploaded/i3/1624565934/O1CN01RTTRFy1thoztFTvWl_!!0-item_pic.jpg_300x300q90.jpg',
+    title: '法式复古玫瑰ins少女心床裙款田园风小碎花床上四件套全棉纯棉1.5',
+    price: '258',
+    vipPrice: '378',
+    shopDesc: '自营',
+    delivery: '厂商配送',
+    shopName: '阳澄湖大闸蟹自营店>',
+    tags: ['生鲜', '热销', '大卖']
+  }
+  , {
     imgUrl:
       'https://gw.alicdn.com/bao/uploaded/i1/1752732599/TB25KZZobRkpuFjSspmXXc.9XXa_!!1752732599.jpg_300x300q90.jpg',
     title: '活蟹】湖塘煙雨 阳澄湖大闸蟹公4.5两 母3.5两 4对8只 鲜活生鲜螃蟹现货水产礼盒海鲜水',
@@ -284,7 +288,7 @@ const state = ref(
     shopName: '阳澄湖大闸蟹自营店>',
     tags: ['生鲜', '热销', '大卖']
   }
-  ])
+])
 
 const getSwiperImage = async () => {
   try {

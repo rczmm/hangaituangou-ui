@@ -6,7 +6,7 @@
       <!-- 商品图片 -->
       <view class="good-image" @click="navToDetail(item)">
         <image
-          src="https://img.alicdn.com/bao/uploaded///asearch.alicdn.com/bao/uploaded/O1CN01QlOWmD1loDsfA1o08_!!2203907254865.jpg_460x460q90.jpg_.webp"
+          :src="item.image"
           mode="aspectFill"/>
       </view>
       <!-- 商品信息       -->
@@ -38,6 +38,7 @@ interface Item {
   name: string;
   price: number;
   count: number;
+  image: string;
 }
 
 defineProps<{

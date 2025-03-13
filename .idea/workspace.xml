@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d717de2a-41cc-430b-a1b4-4ca1221d214d" name="更改" comment="">
+    <list default="true" id="36699143-3ad5-4d70-afb7-8439650b5bae" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assests/tabbar/cart-active.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/tabbar/cart-active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assests/tabbar/cart.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assests/tabbar/cart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GoodCard/GoodCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoodCard/GoodCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/classes/classes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/classes/classes.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/details/details.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/details/details.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,42 +30,51 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/rczmm/hangaituangou-ui.git&quot;,
-    &quot;accountId&quot;: &quot;dc7b0340-532b-4f89-863b-1213a81ad251&quot;
+    &quot;accountId&quot;: &quot;11fb321c-9ea8-410f-93fe-f47bf81a7244&quot;
   }
 }</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="D:\apache-maven-3.5.3" />
+        <option name="localRepository" value="D:\apache-maven-3.5.3\lib" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.5.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2tUFeG4Yp8uP70jsxbLRZb1hMmQ" />
+  <component name="ProjectId" id="2uD1cycvEKuxMqts6wMG76hvKpO" />
   <component name="ProjectViewState">
+    <option name="flattenModules" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/home/musicwebapp/webapp&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/WorkSpace&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;E:\\home\\hangaituangou-ui\\node_modules\\stylelint&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
     &quot;npm.dev:weapp.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;E:\\home\\hangaituangou-ui\\node_modules\\typescript\\lib&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\webapp\\hangaituangou-ui\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\home\hangaituangou-ui\src\assests\tabbar" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="dev:weapp" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -75,8 +82,7 @@
       <scripts>
         <script value="dev:weapp" />
       </scripts>
-      <node-interpreter value="D:/Program Files/nodejs/node" />
-      <package-manager value="D:\Program Files\nodejs\node_global\yarn.cmd" />
+      <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
@@ -84,27 +90,20 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.25659.40" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.39" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.39" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="d717de2a-41cc-430b-a1b4-4ca1221d214d" name="更改" comment="" />
-      <created>1740398841288</created>
+      <changelist id="36699143-3ad5-4d70-afb7-8439650b5bae" name="更改" comment="" />
+      <created>1741768414243</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1740398841288</updated>
-      <workItem from="1740398844006" duration="768000" />
-      <workItem from="1740399898908" duration="1924000" />
-      <workItem from="1740407343172" duration="403000" />
-      <workItem from="1740413469003" duration="634000" />
-      <workItem from="1740745655600" duration="609000" />
-      <workItem from="1740828958328" duration="303000" />
-      <workItem from="1741407308315" duration="110000" />
-      <workItem from="1741408491635" duration="638000" />
-      <workItem from="1741409143201" duration="865000" />
+      <updated>1741768414243</updated>
+      <workItem from="1741768415940" duration="3199000" />
     </task>
     <servers />
   </component>

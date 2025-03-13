@@ -4,14 +4,14 @@
     <scroll-view :scroll-x="true" class="scroll-view" style="width: 100%">
       <view v-for="item in itemList" :key="item.id" class="scroll-item" @click="getItemList(item)">
         <icon-font font-class-name="iconfont" class-prefix="icon" :name="item.icon" :size="50"
-          color="green"></icon-font>
+                   color="green"></icon-font>
         <text style="font-size: 15px;">{{ item.text }}</text>
       </view>
     </scroll-view>
 
     <nut-tabs v-model="value" auto-height type="smile" title-scroll direction="vertical">
       <nut-tab-pane v-for="item in items" :key="item.key" :title="item.title" :pane-key="item.key"
-        :click="getStateList(item.title, item.category)">
+                    :click="getStateList(item.title, item.category)">
         <view class="tab-content">
           <view v-if="value === item.key">
             <view v-if="item.key === '1'">
@@ -21,6 +21,9 @@
               <GoodCard :state="state"></GoodCard>
             </view>
             <view v-else-if="item.key === '3'">
+              <GoodCard :state="state"></GoodCard>
+            </view>
+            <view v-else-if="item.key === '4'">
               <GoodCard :state="state"></GoodCard>
             </view>
           </view>
@@ -47,9 +50,9 @@
 </template>
 
 <script setup lang="ts">
-import { IconFont } from "@nutui/icons-vue";
+import {IconFont} from "@nutui/icons-vue";
 import './classes.scss'
-import { computed, onMounted, reactive, ref } from "vue";
+import {computed, onMounted, reactive, ref} from "vue";
 import Taro from "@tarojs/taro";
 import GoodCard from "../../components/GoodCard/GoodCard.vue";
 
@@ -62,20 +65,21 @@ interface Item {
 }
 
 const itemList = reactive<Item[]>([
-  { id: 1, icon: 'shucai', text: '蔬菜瓜果' },
-  { id: 2, icon: 'shucai', text: '新鲜水果' },
-  { id: 3, icon: 'shucai', text: '时令蔬菜' },
-  { id: 4, icon: 'shucai', text: '进口水果' },
-  { id: 5, icon: 'shucai', text: '叶菜类' },
-  { id: 6, icon: 'shucai', text: '根茎类' },
-  { id: 7, icon: 'shucai', text: '菌菇类' },
+  {id: 1, icon: 'shucai', text: '蔬菜瓜果'},
+  {id: 2, icon: 'shucai', text: '新鲜水果'},
+  {id: 3, icon: 'shucai', text: '时令蔬菜'},
+  {id: 4, icon: 'shucai', text: '进口水果'},
+  {id: 5, icon: 'shucai', text: '叶菜类'},
+  {id: 6, icon: 'shucai', text: '根茎类'},
+  {id: 7, icon: 'shucai', text: '菌菇类'},
 ]);
 
 
 const items = ref([
-  { key: '1', title: '绿叶菜', content: 'Content of Tab 1', category: '蔬菜瓜果' },
-  { key: '2', title: '土豆根茎', content: 'Content of Tab 1', category: '蔬菜瓜果' },
-  { key: '3', title: '我是水果', content: 'Content of Tab 1', category: '蔬菜瓜果' }
+  {key: '1', title: '绿叶菜', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: '2', title: '土豆根茎', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: '3', title: '我是水果', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: '4', title: '我不是水果', content: 'Content of Tab 1', category: '蔬菜瓜果'},
 ]);
 
 const state = ref([
@@ -83,13 +87,36 @@ const state = ref([
     id: 1,
     name: "鲜豆腐皮",
     price: 20,
-    count: 0
+    count: 0,
+    image: "https://img.alicdn.com/bao/uploaded/i4/1825742034/O1CN01UnOOCl1QtcZf9Tnf1_!!1825742034.jpg"
   },
   {
     id: 2,
     name: "新鲜长黄瓜",
     price: 100,
-    count: 0
+    count: 0,
+    image: "https://img.alicdn.com/bao/uploaded/i3/2217490895557/O1CN01RrKN921qv9yIKWMjB_!!2217490895557.png"
+  },
+  {
+    id: 3,
+    name: "新鲜长黄瓜",
+    price: 100,
+    count: 0,
+    image: "https://img.alicdn.com/bao/uploaded/i2/4118153402/O1CN01vM9R9p1b0AS6zm038_!!4611686018427381946-0-item_pic.jpg"
+  },
+  {
+    id: 4,
+    name: "新鲜长黄瓜",
+    price: 100,
+    count: 0,
+    image: "https://img.alicdn.com/bao/uploaded/i3/374544688/O1CN01vxhKmS1kV9mm4te7X_!!4611686018427386160-2-item_pic.png"
+  },
+  {
+    id: 5,
+    name: "新鲜长黄瓜",
+    price: 100,
+    count: 0,
+    image: "https://img.alicdn.com/bao/uploaded/i1/2209960967636/O1CN01ADBET926HLOVfZ5Et_!!4611686018427387348-0-item_pic.jpg"
   }
 ])
 

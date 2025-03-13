@@ -144,9 +144,10 @@ onMounted(
     console.log('id', id.value)
     // 数据模拟
     product.imagePath = [
-      "https://img30.360buyimg.com/imagetools/jfs/t1/153847/3/5051/62777/5fa65e01Ec88cecb9/36ba206949050b39.jpg",
-      "https://img30.360buyimg.com/imagetools/jfs/t1/131794/19/15190/57841/5fa65e03E75c12ef1/0d1ac3a87ff9e398.jpg",
-      "https://img30.360buyimg.com/imagetools/jfs/t1/155091/12/4926/68141/5fa65e03E9d8c5120/9c71b6e49f1eb3c3.jpg",
+      "https://img.alicdn.com/bao/uploaded/i2/248584509/O1CN016VbQtE1jBAtgBlfK8_!!248584509.jpg",
+      "https://img.alicdn.com/bao/uploaded/i4/10550225/O1CN01LVR7dE1DX69dLmZ89_!!4611686018427386833-0-item_pic.jpg",
+      "https://img.alicdn.com/bao/uploaded/i3/6000000002169/O1CN019LhT7k1RtS6FaRSDb_!!6000000002169-0-mia.jpg",
+      "https://img.alicdn.com/bao/uploaded/i4/2218687872616/O1CN01WmCXoN1VCB6xB630g_!!0-item_pic.jpg"
     ]
     product.name = '华为 Mate 30 Pro'
     product.price = 4599
@@ -252,18 +253,19 @@ const cmt = ref(
       "mainUrl": "https://img.300hu.com/4c1f7a6atransbjngwcloud1oss/3a5abb98377496264567160833/imageSampleSnapshot/1604738160_777980391.100_1344.jpg",
       "videoUrl": "https://vod.300hu.com/4c1f7a6atransbjngwcloud1oss/3a5abb98377496264567160833/v.f30.mp4?source=1&h265=v.f1022_h265.mp4"
     }],
-    "images": [{
+    "images": [
+      {
       "smallImgUrl": "",
       "bigImgUrl": "",
-      "imgUrl": "https://img30.360buyimg.com/imagetools/jfs/t1/153847/3/5051/62777/5fa65e01Ec88cecb9/36ba206949050b39.jpg"
+      "imgUrl": "https://img.alicdn.com/bao/uploaded/i4/2215591096345/O1CN01nmLEUl1wk40usQUSa_!!2215591096345.png"
     }, {
       "smallImgUrl": "",
       "bigImgUrl": "",
-      "imgUrl": "https://img30.360buyimg.com/imagetools/jfs/t1/131794/19/15190/57841/5fa65e03E75c12ef1/0d1ac3a87ff9e398.jpg"
+      "imgUrl": "https://img.alicdn.com/bao/uploaded/i2/1872056186/O1CN015t42YU1vZF6NR74Q9_!!1872056186.jpg"
     }, {
       "smallImgUrl": "",
       "bigImgUrl": "",
-      "imgUrl": "https://img30.360buyimg.com/imagetools/jfs/t1/155091/12/4926/68141/5fa65e03E9d8c5120/9c71b6e49f1eb3c3.jpg"
+      "imgUrl": "https://img.alicdn.com/bao/uploaded/i1/2206849860376/O1CN011mINcr1EeFsUuBzDV_!!0-item_pic.jpg"
     }, {
       "smallImgUrl": "",
       "bigImgUrl": "",
