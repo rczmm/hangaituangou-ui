@@ -50,7 +50,7 @@
 <script setup lang="ts">
 import {IconFont} from "@nutui/icons-vue";
 import './classes.scss'
-import {computed, onMounted, reactive, ref, watch} from "vue";
+import {computed, onMounted, reactive, ref} from "vue";
 import Taro from "@tarojs/taro";
 import GoodCard from "../../components/GoodCard/GoodCard.vue";
 

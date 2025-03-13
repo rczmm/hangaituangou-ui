@@ -4,6 +4,29 @@
   height: 100%;
 }
 
+.swiper-view {
+  display: flex;
+  padding: 20px;
+  height: 500px;
+}
+
+.swiper-view-left {
+  width: 48%;
+  height: 100%;
+}
+
+.swiper-view-right {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .swiper-view-right-up, .swiper-view-right-down {
+    height: 48%;
+  }
+
+}
+
 .notice-card {
   margin: 0 0 20px 0;
   background-color: #F8F3FF;
@@ -44,7 +67,7 @@
     color: #FFD700;
     font-size: 1.2em;
     top: 0.5em; /* 稍微向下偏移 */
-  left: 25px; /* 稍微向右偏移 */
+    left: 25px; /* 稍微向右偏移 */
     opacity: 0.7;
 
   }
@@ -53,7 +76,6 @@
     content: "🌟";
   }
 }
-
 
 .back-view:hover {
   box-shadow: 0 5px 20px rgba(255, 182, 193, 0.2);

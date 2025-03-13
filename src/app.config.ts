@@ -21,7 +21,8 @@ export default {
     'pages/profit/withdraw',
     'pages/profit/profit',
     'pages/OrderManage/OrderManage',
-    'pages/review/review'
+    'pages/review/review',
+    'pages/seckill/seckill',
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -41,7 +42,7 @@ export default {
         iconPath: './assests/tabbar/home.png',
         selectedIconPath: './assests/tabbar/home-active.png'
       }, {
-        pagePath: 'pages/category/category',
+        pagePath: 'pages/classes/classes',
         text: '分类',
         iconPath: './assests/tabbar/category.png',
         selectedIconPath: './assests/tabbar/category-active.png'

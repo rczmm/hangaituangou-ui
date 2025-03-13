@@ -10,21 +10,64 @@
     <nut-noticebar class="notice-card" :text="text" close-mode scrollable/>
 
     <!--  轮播图 -->
-    <nut-swiper
-      :auto-play="3000"
-      loop
-      direction="horizontal"
-      pagination-visible
-      :frequency="1000"
-      :rows="4"
-      :top="20"
-      :speeds="7000"
-      style="width: 90%; margin: 0 auto; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); overflow: hidden;"
-    >
-      <nut-swiper-item v-for="(item, index) in swiperList" :key="index" style="height: 150px">
-        <img :src="item" alt="" style="height: 100%; width: 100%" draggable="false"/>
-      </nut-swiper-item>
-    </nut-swiper>
+    <view class="swiper-view">
+      <view class="swiper-view-left">
+        <nut-swiper
+          :auto-play="3000"
+          loop
+          direction="horizontal"
+          pagination-visible
+          :frequency="1000"
+          :rows="4"
+          :top="20"
+          :speeds="7000"
+          style="width: 90%; margin: 0 auto; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); overflow: hidden;"
+        >
+          <nut-swiper-item v-for="(item, index) in swiperList" :key="index" style="height: 255px">
+            <img :src="item" alt="" style="height: 100%; width: 100%;object-fit: cover;transition: transform .3s ease"
+                 draggable="false"/>
+          </nut-swiper-item>
+        </nut-swiper>
+      </view>
+      <view class="swiper-view-right">
+        <view class="swiper-view-right-up">
+          <nut-swiper
+            :auto-play="3000"
+            loop
+            direction="horizontal"
+            pagination-visible
+            :frequency="1000"
+            :rows="4"
+            :top="20"
+            :speeds="7000"
+            style="width: 90%; margin: 0 auto; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); overflow: hidden;"
+          >
+            <nut-swiper-item v-for="(item, index) in swiperList" :key="index" style="height: 120px">
+              <img :src="item" alt="" style="height: 100%; width: 100%;object-fit: cover;transition: transform .3s ease"
+                   draggable="false"/>
+            </nut-swiper-item>
+          </nut-swiper>
+        </view>
+        <view class="swiper-view-right-down">
+          <nut-swiper
+            :auto-play="3000"
+            loop
+            direction="horizontal"
+            pagination-visible
+            :frequency="1000"
+            :rows="4"
+            :top="20"
+            :speeds="7000"
+            style="width: 90%; margin: 0 auto; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); overflow: hidden;"
+          >
+            <nut-swiper-item v-for="(item, index) in swiperList" :key="index" style="height: 120px">
+              <img :src="item" alt="" style="height: 100%; width: 100%;object-fit: cover;transition: transform .3s ease"
+                   draggable="false"/>
+            </nut-swiper-item>
+          </nut-swiper>
+        </view>
+      </view>
+    </view>
 
     <view class="back-view">
       <nut-divider :style="{ color: '#FFB6C1', borderColor: '#FFB6C1', padding: '0 12px', margin: '15px 0' }">
@@ -94,10 +137,10 @@
 
     <!--标签区域-->
     <view class="scroll-view">
-      <view class="scroll-item">
+      <view class="scroll-item" @click="Taro.navigateTo({url: `/pages/seckill/seckill`})">
         <IconFont font-class-name="iconfont" class-prefix="icon" name="choujiang"
                   :size="25" color="#FF69B4" class="scroll-icon"></IconFont>
-        <text class="scroll-text"> 天天抽奖</text>
+        <text class="scroll-text"> 秒杀专场</text>
       </view>
       <view class="scroll-item">
         <IconFont font-class-name="iconfont" class-prefix="icon" name="qiandao"
@@ -197,10 +240,11 @@ const navToSearch = (val: string) => {
 
 // 轮播图
 const swiperList = ref([
-  'https://i0.hdslb.com/bfs/live/new_room_cover/f72740ffd03d3e8b958bcd64ce6224ffa74d3b34.jpg',
-  'https://i1.hdslb.com/bfs/archive/7d6be67f722b8c8a5776aaef81d8259e47d6eb84.jpg',
-  'https://i0.hdslb.com/bfs/archive/d50d4f7af1f5cc8ec09f094a84b3e7ae5dacd9d0.jpg',
-  'https://i1.hdslb.com/bfs/archive/ded71849c2a7d76e7a015794838efe5b6b040fd6.jpg'
+  'https://img.alicdn.com/bao/uploaded/i1/2207964723253/O1CN01CCdD8d1ZtvRH1Jqc6_!!2207964723253.jpg_460x460q90.jpg_.webp',
+  'https://img.alicdn.com/bao/uploaded/i2/389048191/O1CN01aiNgEg2ANXB0FG5FP_!!389048191.jpg_460x460q90.jpg_.webp',
+  'https://img.alicdn.com/bao/uploaded/i4/2060217311/O1CN01ZvjICZ23sUa2D1eYo_!!2060217311.jpg_460x460q90.jpg_.webp',
+  'https://img.alicdn.com/bao/uploaded/i1/725677994/O1CN01za56N028vJBhFZXgT_!!725677994.jpg_460x460q90.jpg_.webp',
+  'https://img.alicdn.com/bao/upload/O1CN01GZmSlb1huOfxTnq5M_!!6000000004337-0-yinhe.jpg_460x460q90.jpg_.webp'
 ])
 
 const state = ref([
