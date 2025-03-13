@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36699143-3ad5-4d70-afb7-8439650b5bae" name="更改" comment="">
+    <list default="true" id="36699143-3ad5-4d70-afb7-8439650b5bae" name="更改" comment="feat(classes): 添加新分类并更新商品卡片&#10;&#10;- 在 classes 页面添加新分类&quot;我不是水果&quot;&#10;- 更新 GoodCard 组件，增加 image属性用于显示商品图片&#10;- 修改 details 页面的商品图片路径&#10;-调整 index 页面的布局和样式">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GoodCard/GoodCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoodCard/GoodCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/classes/classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/classes/classes.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/classes/classes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/classes/classes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/details/details.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/details/details.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +24,9 @@
     &quot;assignee&quot;: &quot;rczmm&quot;
   }
 }</component>
+  <component name="GitLabDefaultAccount">
+    <option name="defaultAccountId" value="c74add13-634c-4d02-8a40-ea84f6569e86" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/rczmm/hangaituangou-ui.git&quot;,
@@ -53,28 +53,28 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/WorkSpace&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;npm.dev:weapp.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;E:\\webapp\\hangaituangou-ui\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/WorkSpace",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "E:\\webapp\\hangaituangou-ui\\node_modules\\stylelint",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "npm.dev:weapp.executor": "Run",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "show.migrate.to.gradle.popup": "false",
+    "ts.external.directory.path": "E:\\webapp\\hangaituangou-ui\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="dev:weapp" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -104,10 +104,24 @@
       <option name="presentableId" value="Default" />
       <updated>1741768414243</updated>
       <workItem from="1741768415940" duration="3199000" />
+      <workItem from="1741827937467" duration="3093000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(classes): 添加新分类并更新商品卡片&#10;&#10;- 在 classes 页面添加新分类&quot;我不是水果&quot;&#10;- 更新 GoodCard 组件，增加 image属性用于显示商品图片&#10;- 修改 details 页面的商品图片路径&#10;-调整 index 页面的布局和样式">
+      <option name="closed" value="true" />
+      <created>1741828048842</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741828048842</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(classes): 添加新分类并更新商品卡片&#10;&#10;- 在 classes 页面添加新分类&quot;我不是水果&quot;&#10;- 更新 GoodCard 组件，增加 image属性用于显示商品图片&#10;- 修改 details 页面的商品图片路径&#10;-调整 index 页面的布局和样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(classes): 添加新分类并更新商品卡片&#10;&#10;- 在 classes 页面添加新分类&quot;我不是水果&quot;&#10;- 更新 GoodCard 组件，增加 image属性用于显示商品图片&#10;- 修改 details 页面的商品图片路径&#10;-调整 index 页面的布局和样式" />
   </component>
 </project>

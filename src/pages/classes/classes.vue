@@ -9,27 +9,25 @@
       </view>
     </scroll-view>
 
-    <nut-tabs v-model="value" auto-height type="smile" title-scroll direction="vertical">
-      <nut-tab-pane v-for="item in items" :key="item.key" :title="item.title" :pane-key="item.key"
-                    :click="getStateList(item.title, item.category)">
-        <view class="tab-content">
-          <view v-if="value === item.key">
-            <view v-if="item.key === '1'">
-              <GoodCard :state="state"></GoodCard>
-            </view>
-            <view v-else-if="item.key === '2'">
-              <GoodCard :state="state"></GoodCard>
-            </view>
-            <view v-else-if="item.key === '3'">
-              <GoodCard :state="state"></GoodCard>
-            </view>
-            <view v-else-if="item.key === '4'">
-              <GoodCard :state="state"></GoodCard>
-            </view>
-          </view>
+
+    <!-- tabs区域   -->
+    <view class="tabs-container">
+      <!-- 标签标题区域     -->
+      <view class="tabs-titles">
+        <view v-for="item in items" :key="item.key" class="tabs-title" :class="{'active': value === item.key}"
+              @click="selectTab(item)">
+          <text>{{ item.title }}</text>
         </view>
-      </nut-tab-pane>
-    </nut-tabs>
+      </view>
+
+      <!-- 内容区域     -->
+      <view class="tabs-content">
+        <view v-for="item in items" :key="item.key" class="tabs-content-item" :class="{'active-content': value ===
+        item.key}" v-show="value === item.key">
+          <GoodCard :state="state"></GoodCard>
+        </view>
+      </view>
+    </view>
 
     <!-- 底部去支付-->
     <view class="pay">
@@ -56,7 +54,7 @@ import {computed, onMounted, reactive, ref} from "vue";
 import Taro from "@tarojs/taro";
 import GoodCard from "../../components/GoodCard/GoodCard.vue";
 
-const value = ref('1')
+const value = ref(1)
 
 interface Item {
   id: number;
@@ -74,12 +72,11 @@ const itemList = reactive<Item[]>([
   {id: 7, icon: 'shucai', text: '菌菇类'},
 ]);
 
-
 const items = ref([
-  {key: '1', title: '绿叶菜', content: 'Content of Tab 1', category: '蔬菜瓜果'},
-  {key: '2', title: '土豆根茎', content: 'Content of Tab 1', category: '蔬菜瓜果'},
-  {key: '3', title: '我是水果', content: 'Content of Tab 1', category: '蔬菜瓜果'},
-  {key: '4', title: '我不是水果', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: 1, title: '绿叶菜', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: 2, title: '土豆根茎', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: 3, title: '我是水果', content: 'Content of Tab 1', category: '蔬菜瓜果'},
+  {key: 4, title: '我不是水果', content: 'Content of Tab 1', category: '蔬菜瓜果'},
 ]);
 
 const state = ref([
@@ -118,7 +115,12 @@ const state = ref([
     count: 0,
     image: "https://img.alicdn.com/bao/uploaded/i1/2209960967636/O1CN01ADBET926HLOVfZ5Et_!!4611686018427387348-0-item_pic.jpg"
   }
-])
+]);
+
+const selectTab = (item) => {
+  value.value = item.key;
+  getStateList(item.title, item.category);
+};
 
 const getStateList = (title: string, category: string) => {
   Taro.request({
@@ -133,7 +135,6 @@ const getStateList = (title: string, category: string) => {
   }).then(res => {
     state.value = res.data;
   })
-  console.log('getStateList', title)
 }
 
 const getItemList = (item: Item) => {

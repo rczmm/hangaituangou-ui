@@ -1,18 +1,21 @@
 .classes-view {
   background-color: #FFF5F5;
   min-height: 100vh;
+
   .scroll-view {
     white-space: nowrap;
     padding: 15px;
     overflow-x: auto;
     background: linear-gradient(to bottom, #E6E6FA, #FFF5F5);
     border-bottom: 2px solid #FFE4E1;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
     &::-webkit-scrollbar {
       width: 0;
       height: 0;
       display: none;
     }
+
     .scroll-item {
       display: inline-flex;
       flex-direction: column;
@@ -21,10 +24,10 @@
       padding: 10px;
       background-color: #fff;
       border-radius: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       position: relative;
       flex-shrink: 0;
-      
+
       &::before {
         content: '';
         position: absolute;
@@ -55,46 +58,7 @@
       }
     }
   }
-  .nut-tabs {
-    background-color: #fff;
-    margin-top: 15px;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    .nut-tabs__titles {
-      background: linear-gradient(to right, #FFE4E1, #E6E6FA);
-      border-radius: 15px 15px 0 0;
-      padding: 10px 0;
 
-      .nut-tabs__titles-item {
-        color: #666;
-        font-size: 14px;
-        position: relative;
-        
-        &::after {
-          content: '🎀';
-          position: absolute;
-          top: -8px;
-          right: -8px;
-          font-size: 12px;
-          opacity: 0;
-          transition: opacity 0.3s;
-        }
-
-        &.active {
-          color: #FF69B4;
-          font-weight: bold;
-          
-          &::after {
-            opacity: 1;
-          }
-        }
-      }
-    }
-
-    .tab-content {
-      padding: 8px;
-    }
-  }
   .pay {
     position: fixed;
     bottom: 0;
@@ -105,7 +69,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
     border-top: 2px solid #FFE4E1;
 
     .pay-info {
@@ -122,6 +86,7 @@
             color: #FF69B4;
             font-weight: bold;
           }
+
           &:last-child {
             color: #666;
             font-size: 12px;
@@ -137,7 +102,7 @@
       padding: 8px 25px;
       color: #fff;
       font-weight: bold;
-      box-shadow: 0 2px 8px rgba(255,105,180,0.3);
+      box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
       transition: transform 0.2s;
 
       &:active {
@@ -148,3 +113,54 @@
 }
 
 
+.tabs-container {
+  display: flex; /* 使用 Flexbox 布局 */
+
+  .tabs-titles {
+    display: flex;
+    flex-direction: column; /* 垂直排列标题 */
+    width: 180px; /* 标题区域宽度，根据需要调整 */
+    height: 100vh;
+    border-right: 1px solid #ddd; /* 可选：标题与内容之间的分隔线 */
+    border-bottom: 1px solid #eee; /* 可选：标题之间的分隔线 */
+    background: linear-gradient(to right, #FFE4E1, #E6E6FA);
+    border-radius: 15px 15px 0 0;
+    padding: 10px 0;
+
+    .tabs-title {
+
+      position: relative;
+
+      margin: 15px auto;
+
+      &::after {
+        content: '🎀';
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &.active {
+        color: #f80d2a;
+        font-weight: bold;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+
+  .tabs-content {
+    padding: 20px;
+    width: 80%;
+
+    &.active-content {
+      display: block;
+    }
+  }
+}

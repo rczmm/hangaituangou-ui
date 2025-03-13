@@ -195,9 +195,8 @@ const navToSearch = (val: string) => {
   })
 }
 
-
+// 轮播图
 const swiperList = ref([
-  'https://i0.hdslb.com/bfs/archive/605754231f167116b6cb1f9ebd1cd69068918a96.jpg',
   'https://i0.hdslb.com/bfs/live/new_room_cover/f72740ffd03d3e8b958bcd64ce6224ffa74d3b34.jpg',
   'https://i1.hdslb.com/bfs/archive/7d6be67f722b8c8a5776aaef81d8259e47d6eb84.jpg',
   'https://i0.hdslb.com/bfs/archive/d50d4f7af1f5cc8ec09f094a84b3e7ae5dacd9d0.jpg',
