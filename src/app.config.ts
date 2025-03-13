@@ -2,7 +2,6 @@ export default {
   pages: [
     'pages/index/index',
     'pages/details/details',
-    'pages/category/category',
     'pages/my/my',
     'pages/address/address',
     'pages/classes/classes',
@@ -23,6 +22,7 @@ export default {
     'pages/OrderManage/OrderManage',
     'pages/review/review',
     'pages/seckill/seckill',
+    'pages/merchant/merchant'
   ],
   window: {
     backgroundTextStyle: 'light',

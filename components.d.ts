@@ -43,6 +43,7 @@ declare module 'vue' {
     NutSteps: typeof import('@nutui/nutui-taro')['Steps']
     NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
     NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']
+    NutTabpane: typeof import('@nutui/nutui-taro')['Tabpane']
     NutTabPane: typeof import('@nutui/nutui-taro')['TabPane']
     NutTabs: typeof import('@nutui/nutui-taro')['Tabs']
     NutTag: typeof import('@nutui/nutui-taro')['Tag']
@@ -50,6 +51,8 @@ declare module 'vue' {
     NutUploader: typeof import('@nutui/nutui-taro')['Uploader']
     OrderCard: typeof import('./src/components/OrderDetail/OrderCard.vue')['default']
     OrderList: typeof import('./src/components/OrderList/OrderList.vue')['default']
+    ProductManagement: typeof import('./src/components/Merchant/ProductManagement.vue')['default']
+    ReturnManagement: typeof import('./src/components/Merchant/ReturnManagement.vue')['default']
     ShopList: typeof import('./src/components/ShopList/ShopList.vue')['default']
   }
 }

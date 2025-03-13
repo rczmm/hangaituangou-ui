@@ -54,6 +54,10 @@
         <icon-font font-class-name="iconfont" class-prefix="icon" name="wode"
                    :size="25" color="#DDA0DD"></icon-font>
       </nut-grid-item>
+      <nut-grid-item text="我是商家" @click="Taro.navigateTo({url: '/pages/merchant/merchant'})">
+        <icon-font font-class-name="iconfont" class-prefix="icon" name="wode"
+                   :size="25" color="#DDA0DD"></icon-font>
+      </nut-grid-item>
     </nut-grid>
 
     <nut-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 16px' }"> 为您推荐</nut-divider>
