@@ -86,7 +86,7 @@ const items = ref<TabItem[]>([ // Explicitly type items
   {key: 1, title: '绿叶菜', content: 'Content of Tab 1', category: '蔬菜瓜果'},
   {key: 2, title: '土豆根茎', content: 'Content of Tab 1', category: '蔬菜瓜果'},
   {key: 3, title: '我是水果', content: 'Content of Tab 1', category: '新鲜水果'},
-  {key: 4, title: '我不是水果', content: 'Content of Tab 1', category: '新鲜水果'},
+  {key: 4, title: '不是水果', content: 'Content of Tab 1', category: '新鲜水果'},
 ]);
 
 const state = ref([

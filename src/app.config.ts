@@ -41,12 +41,14 @@ export default {
         text: '首页',
         iconPath: './assests/tabbar/home.png',
         selectedIconPath: './assests/tabbar/home-active.png'
-      }, {
-        pagePath: 'pages/classes/classes',
-        text: '分类',
-        iconPath: './assests/tabbar/category.png',
-        selectedIconPath: './assests/tabbar/category-active.png'
-      }, {
+      },
+      // {
+      //   pagePath: 'pages/classes/classes',
+      //   text: '分类',
+      //   iconPath: './assests/tabbar/category.png',
+      //   selectedIconPath: './assests/tabbar/category-active.png'
+      // },
+      {
         pagePath: 'pages/cart/cart',
         text: '购物车',
         iconPath: './assests/tabbar/cart.png',

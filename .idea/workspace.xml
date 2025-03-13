@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="36699143-3ad5-4d70-afb7-8439650b5bae" name="更改" comment="feat(merchant): 新增商家中心功能&#10;&#10;- 添加商品管理、退货管理等功能模块&#10;- 实现商品添加、编辑、删除及退货处理等操作&#10;- 优化商家中心页面布局和样式">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/classes/classes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/classes/classes.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,7 @@
       <workItem from="1741768415940" duration="3199000" />
       <workItem from="1741827937467" duration="7239000" />
       <workItem from="1741835227293" duration="9000" />
-      <workItem from="1741841508832" duration="207000" />
+      <workItem from="1741841508832" duration="643000" />
     </task>
     <task id="LOCAL-00001" summary="feat(classes): 添加新分类并更新商品卡片&#10;&#10;- 在 classes 页面添加新分类&quot;我不是水果&quot;&#10;- 更新 GoodCard 组件，增加 image属性用于显示商品图片&#10;- 修改 details 页面的商品图片路径&#10;-调整 index 页面的布局和样式">
       <option name="closed" value="true" />
@@ -168,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741835046421</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat(merchant): 新增商家中心功能&#10;&#10;- 添加商品管理、退货管理等功能模块&#10;- 实现商品添加、编辑、删除及退货处理等操作&#10;- 优化商家中心页面布局和样式">
+      <option name="closed" value="true" />
+      <created>1741841727146</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741841727146</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
